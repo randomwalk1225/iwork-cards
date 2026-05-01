@@ -1,0 +1,457 @@
+{
+  "title": "Honors Algebra II — Final Exam Practice (Chapters 5–8)",
+  "subject": "Honors Algebra II",
+  "exam_date": "2026-05-11",
+  "instructor": "원장 이상열",
+  "source": "Pearson Algebra II Common Core, Final Exam Review (Keisha Bertiz, APIS)",
+  "questions": [
+    {
+      "id": "Q01",
+      "chapter": "5-1",
+      "topic": "Classify polynomials by degree",
+      "question": "Classify the polynomial $-6x^5 + 4x^3 + 3x^2 + 11$ by degree.",
+      "choices": {
+        "A": "cubic",
+        "B": "quartic",
+        "C": "quintic",
+        "D": "sextic"
+      },
+      "answer": "C",
+      "explanation": "The highest-degree term is $-6x^5$, so the degree is $5$. A degree-5 polynomial is called <strong>quintic</strong>."
+    },
+    {
+      "id": "Q02",
+      "chapter": "5-1",
+      "topic": "Classify polynomials by number of terms",
+      "question": "Classify $8x^4 + 7x^3 + 5x^2 + 8$ by the number of terms.",
+      "choices": {
+        "A": "binomial",
+        "B": "trinomial",
+        "C": "polynomial of 4 terms",
+        "D": "polynomial of 5 terms"
+      },
+      "answer": "C",
+      "explanation": "Count the terms: $8x^4$, $7x^3$, $5x^2$, and $8$ — that is <strong>4 terms</strong>."
+    },
+    {
+      "id": "Q03",
+      "chapter": "5-1",
+      "topic": "End behavior",
+      "question": "Describe the end behavior of $-3x^5 + 9x^4 + 5x^3 + 3$.",
+      "choices": {
+        "A": "Both ends go up",
+        "B": "Both ends go down",
+        "C": "As $x\\to-\\infty$, $y\\to-\\infty$; as $x\\to+\\infty$, $y\\to+\\infty$ (down and up)",
+        "D": "As $x\\to-\\infty$, $y\\to+\\infty$; as $x\\to+\\infty$, $y\\to-\\infty$ (up and down)"
+      },
+      "answer": "D",
+      "explanation": "Leading term is $-3x^5$. Degree is odd ($n=5$) and leading coefficient is negative, so the graph rises on the left and falls on the right (<em>up and down</em>)."
+    },
+    {
+      "id": "Q04",
+      "chapter": "5-2",
+      "topic": "Factor a polynomial",
+      "question": "Write $x^3 + 9x^2 + 18x$ in factored form.",
+      "choices": {
+        "A": "$x(x+3)(x+6)$",
+        "B": "$x(x+6)(x-3)$",
+        "C": "$3x(x+6)(x+1)$",
+        "D": "$6x(x+1)(x+3)$"
+      },
+      "answer": "A",
+      "explanation": "Factor out $x$: $x(x^2+9x+18) = x(x+3)(x+6)$."
+    },
+    {
+      "id": "Q05",
+      "chapter": "5-2",
+      "topic": "Find zeros from factored form",
+      "question": "What are the zeros of $y = x(x-2)(x+5)$?",
+      "choices": {
+        "A": "$0,\\;2,\\;-5$",
+        "B": "$0,\\;-2,\\;5$",
+        "C": "$0,\\;2,\\;5$",
+        "D": "$2,\\;-5$ only"
+      },
+      "answer": "A",
+      "explanation": "Set each factor to zero: $x=0$, $x-2=0\\Rightarrow x=2$, $x+5=0\\Rightarrow x=-5$."
+    },
+    {
+      "id": "Q06",
+      "chapter": "5-4",
+      "topic": "Polynomial long division",
+      "question": "Divide $4x^3 + 2x^2 + 3x + 4$ by $x+4$.",
+      "choices": {
+        "A": "$4x^2 - 14x + 59$, R $-232$",
+        "B": "$4x^2 + 18x - 53$, R $216$",
+        "C": "$4x^2 - 14x + 59$, R $0$",
+        "D": "$4x^2 + 18x + 75$, R $304$"
+      },
+      "answer": "A",
+      "explanation": "Long division: $4x^3 \\div x = 4x^2$. Continuing yields quotient $4x^2 - 14x + 59$ and remainder $-232$."
+    },
+    {
+      "id": "Q07",
+      "chapter": "5-4",
+      "topic": "Synthetic division",
+      "question": "Use synthetic division to divide $-6x^3 + 18x^2 - 7x - 10$ by $(x-2)$.",
+      "choices": {
+        "A": "$-6x^2 + 6x + 5$, R $0$",
+        "B": "$6x^2 - 6x - 5$, R $0$",
+        "C": "$-6x^2 + 30x - 19$, R $-20$",
+        "D": "$6x^2 - 30x + 19$, R $20$"
+      },
+      "answer": "A",
+      "explanation": "Synthetic with $c=2$: bring down $-6$; $-6\\cdot2+18=6$; $6\\cdot2-7=5$; $5\\cdot2-10=0$. Quotient $-6x^2+6x+5$, R $0$."
+    },
+    {
+      "id": "Q08",
+      "chapter": "5-5",
+      "topic": "Rational Root Theorem",
+      "question": "Use the Rational Root Theorem to list all possible rational roots of $x^3 - 6x^2 + 4x + 9 = 0$.",
+      "choices": {
+        "A": "$\\pm 1,\\;\\pm 3,\\;\\pm 9$",
+        "B": "$\\pm 1,\\;\\pm 9$ only",
+        "C": "$\\pm 6,\\;\\pm 3,\\;\\pm 1$",
+        "D": "$1,\\;3,\\;9$"
+      },
+      "answer": "A",
+      "explanation": "Possible rational roots are $\\pm\\frac{p}{q}$ where $p\\mid 9$ and $q\\mid 1$. So $p\\in\\{1,3,9\\}$, $q=1$. Result: $\\pm 1,\\pm 3,\\pm 9$."
+    },
+    {
+      "id": "Q09",
+      "chapter": "5-7",
+      "topic": "Pascal's Triangle / Binomial Theorem",
+      "question": "Use Pascal's Triangle to expand $(d-2)^4$.",
+      "choices": {
+        "A": "$d^4 - 8d^3 + 24d^2 - 32d + 16$",
+        "B": "$d^4 + 8d^3 + 24d^2 + 32d + 16$",
+        "C": "$d^4 - 4d^3 + 6d^2 - 4d + 1$",
+        "D": "$d^4 - 8d^3 - 24d^2 - 32d - 16$"
+      },
+      "answer": "A",
+      "explanation": "Row 4 of Pascal: $1,4,6,4,1$. With alternating signs from $-2$: $d^4 - 4d^3(2) + 6d^2(4) - 4d(8) + 16 = d^4 - 8d^3 + 24d^2 - 32d + 16$."
+    },
+    {
+      "id": "Q10",
+      "chapter": "6-1",
+      "topic": "Real square roots",
+      "question": "Find all real square roots of $0.0009$.",
+      "choices": {
+        "A": "$0.03$ only",
+        "B": "$0.03$ and $-0.03$",
+        "C": "$0.0003$ and $-0.0003$",
+        "D": "$0.009$ and $-0.009$"
+      },
+      "answer": "B",
+      "explanation": "$0.03^2 = 0.0009$ and $(-0.03)^2 = 0.0009$, so the two real square roots are $\\pm 0.03$."
+    },
+    {
+      "id": "Q11",
+      "chapter": "6-1",
+      "topic": "nth roots",
+      "question": "Simplify $\\sqrt[3]{-\\dfrac{64}{125}}$.",
+      "choices": {
+        "A": "$\\dfrac{4}{5}$",
+        "B": "$-\\dfrac{4}{5}$",
+        "C": "$-\\dfrac{16}{25}$",
+        "D": "$-\\dfrac{64}{125}$"
+      },
+      "answer": "B",
+      "explanation": "Cube root of $-64$ is $-4$; cube root of $125$ is $5$. So the result is $-\\dfrac{4}{5}$."
+    },
+    {
+      "id": "Q12",
+      "chapter": "6-2",
+      "topic": "Multiply radicals (same index)",
+      "question": "Multiply and simplify $\\sqrt[4]{5}\\cdot\\sqrt[4]{7}$.",
+      "choices": {
+        "A": "$\\sqrt[4]{35}$",
+        "B": "$\\sqrt[8]{35}$",
+        "C": "$35$",
+        "D": "$5\\sqrt[4]{7}$"
+      },
+      "answer": "A",
+      "explanation": "Same index: $\\sqrt[4]{a}\\cdot\\sqrt[4]{b} = \\sqrt[4]{ab} = \\sqrt[4]{35}$."
+    },
+    {
+      "id": "Q13",
+      "chapter": "6-2",
+      "topic": "Distribute a radical",
+      "question": "Simplify $\\sqrt{3x}\\bigl(\\sqrt{x} - 5\\sqrt{3}\\bigr)$.",
+      "choices": {
+        "A": "$x\\sqrt{3} - 15\\sqrt{x}$",
+        "B": "$\\sqrt{3x} - 15x$",
+        "C": "$x\\sqrt{3} - x\\sqrt{15}$",
+        "D": "$-\\sqrt{15x}$"
+      },
+      "answer": "A",
+      "explanation": "Distribute: $\\sqrt{3x}\\cdot\\sqrt{x}=\\sqrt{3x^2}=x\\sqrt{3}$; and $\\sqrt{3x}\\cdot 5\\sqrt{3}=5\\sqrt{9x}=15\\sqrt{x}$. Result: $x\\sqrt{3}-15\\sqrt{x}$."
+    },
+    {
+      "id": "Q14",
+      "chapter": "6-3",
+      "topic": "Combine like radicals",
+      "question": "Simplify $4\\sqrt{3a} - 7\\sqrt{3a}$.",
+      "choices": {
+        "A": "$-3\\sqrt{3a}$",
+        "B": "$11\\sqrt{3a}$",
+        "C": "$-3\\sqrt{6a}$",
+        "D": "Cannot be simplified"
+      },
+      "answer": "A",
+      "explanation": "Treat $\\sqrt{3a}$ as a like term: $4-7=-3$, so $-3\\sqrt{3a}$."
+    },
+    {
+      "id": "Q15",
+      "chapter": "6-3",
+      "topic": "Rationalize denominator (conjugate)",
+      "question": "Rationalize the denominator of $\\dfrac{2}{\\sqrt{3}+\\sqrt{5}}$.",
+      "choices": {
+        "A": "$\\sqrt{5}-\\sqrt{3}$",
+        "B": "$\\dfrac{\\sqrt{3}+\\sqrt{5}}{4}$",
+        "C": "$\\sqrt{15}$",
+        "D": "$\\dfrac{2}{\\sqrt{8}}$"
+      },
+      "answer": "A",
+      "explanation": "Multiply by conjugate $\\dfrac{\\sqrt{5}-\\sqrt{3}}{\\sqrt{5}-\\sqrt{3}}$: numerator $=2(\\sqrt{5}-\\sqrt{3})$, denominator $=5-3=2$. Result: $\\sqrt{5}-\\sqrt{3}$."
+    },
+    {
+      "id": "Q16",
+      "chapter": "6-4",
+      "topic": "Rational exponents",
+      "question": "Simplify $16^{3/4}$.",
+      "choices": {
+        "A": "$8$",
+        "B": "$12$",
+        "C": "$48$",
+        "D": "$64$"
+      },
+      "answer": "A",
+      "explanation": "$16^{3/4} = (16^{1/4})^3 = 2^3 = 8$."
+    },
+    {
+      "id": "Q17",
+      "chapter": "6-5",
+      "topic": "Solve a radical equation",
+      "question": "Solve $\\sqrt{2x+8} - 6 = -4$.",
+      "choices": {
+        "A": "$x = -3$",
+        "B": "$x = -2$",
+        "C": "$x = 4$",
+        "D": "$x = 12$"
+      },
+      "answer": "B",
+      "explanation": "Add 6: $\\sqrt{2x+8}=2$. Square: $2x+8=4\\Rightarrow 2x=-4\\Rightarrow x=-2$. Check: $\\sqrt{-4+8}=2$ ✓."
+    },
+    {
+      "id": "Q18",
+      "chapter": "6-6",
+      "topic": "Function operations: subtraction",
+      "question": "Let $f(x)=4x-5$ and $g(x)=6x-3$. Find $(f-g)(x)$.",
+      "choices": {
+        "A": "$10x-8$",
+        "B": "$10x-2$",
+        "C": "$-2x-8$",
+        "D": "$-2x-2$"
+      },
+      "answer": "D",
+      "explanation": "$(f-g)(x)=(4x-5)-(6x-3) = 4x-5-6x+3 = -2x-2$."
+    },
+    {
+      "id": "Q19",
+      "chapter": "6-6",
+      "topic": "Composite functions",
+      "question": "Let $f(x)=x+2$ and $g(x)=x^2$. Find $(g\\circ f)(-5)$.",
+      "choices": {
+        "A": "$9$",
+        "B": "$-3$",
+        "C": "$-10$",
+        "D": "$25$"
+      },
+      "answer": "A",
+      "explanation": "$f(-5)=-5+2=-3$, then $g(-3)=(-3)^2=9$."
+    },
+    {
+      "id": "Q20",
+      "chapter": "6-7",
+      "topic": "Inverse of a linear function",
+      "question": "Find the inverse of $y=3x+9$.",
+      "choices": {
+        "A": "$y=\\dfrac{1}{3}x+3$",
+        "B": "$y=\\dfrac{1}{3}x-3$",
+        "C": "$y=3x-3$",
+        "D": "$y=3x+3$"
+      },
+      "answer": "B",
+      "explanation": "Swap $x$ and $y$: $x=3y+9$. Solve: $y=\\dfrac{x-9}{3}=\\dfrac{1}{3}x-3$."
+    },
+    {
+      "id": "Q21",
+      "chapter": "7-2",
+      "topic": "Continuously compounded interest",
+      "question": "You invest $\\$2{,}000$ at $5\\%$ compounded continuously. Find the value after $4$ years. (Round to the nearest cent.)",
+      "choices": {
+        "A": "$\\$2{,}442.81$",
+        "B": "$\\$2{,}415.93$",
+        "C": "$\\$2{,}400.00$",
+        "D": "$\\$2{,}500.00$"
+      },
+      "answer": "A",
+      "explanation": "$A = Pe^{rt} = 2000\\cdot e^{0.05\\cdot 4} = 2000\\cdot e^{0.2}\\approx 2000\\cdot 1.22140\\approx \\$2{,}442.81$."
+    },
+    {
+      "id": "Q22",
+      "chapter": "7-3",
+      "topic": "Exponential to logarithmic form",
+      "question": "Write $2^5 = 32$ in logarithmic form.",
+      "choices": {
+        "A": "$\\log_2 32 = 5$",
+        "B": "$\\log_5 32 = 2$",
+        "C": "$\\log 32 = 5\\cdot 2$",
+        "D": "$\\log_{32} 5 = 2$"
+      },
+      "answer": "A",
+      "explanation": "Definition of log: $b^y = x \\Leftrightarrow \\log_b x = y$. Here $b=2$, $y=5$, $x=32$, so $\\log_2 32 = 5$."
+    },
+    {
+      "id": "Q23",
+      "chapter": "7-3",
+      "topic": "Evaluate a logarithm",
+      "question": "Evaluate $\\log_3 243$.",
+      "choices": {
+        "A": "$3$",
+        "B": "$4$",
+        "C": "$5$",
+        "D": "$-5$"
+      },
+      "answer": "C",
+      "explanation": "$3^5 = 243$, so $\\log_3 243 = 5$."
+    },
+    {
+      "id": "Q24",
+      "chapter": "7-4",
+      "topic": "Combine logarithms",
+      "question": "Write $3\\log_b q + 6\\log_b v$ as a single logarithm.",
+      "choices": {
+        "A": "$\\log_b(q^3 v^6)$",
+        "B": "$\\log_b(q v^{3+6})$",
+        "C": "$\\log_b(q^3 + v^6)$",
+        "D": "$(3+6)\\log_b(q+v)$"
+      },
+      "answer": "A",
+      "explanation": "Power rule: $a\\log_b x = \\log_b x^a$. Then product rule: $\\log_b q^3 + \\log_b v^6 = \\log_b(q^3 v^6)$."
+    },
+    {
+      "id": "Q25",
+      "chapter": "7-4",
+      "topic": "Expand logarithms",
+      "question": "Expand $\\log_3(11p^3)$.",
+      "choices": {
+        "A": "$\\log_3 11 + 3\\log_3 p$",
+        "B": "$\\log_3 11 \\cdot 3\\log_3 p$",
+        "C": "$\\log_3 11 - 3\\log_3 p$",
+        "D": "$11\\log_3 p^3$"
+      },
+      "answer": "A",
+      "explanation": "Product rule: $\\log_3(11p^3) = \\log_3 11 + \\log_3 p^3 = \\log_3 11 + 3\\log_3 p$."
+    },
+    {
+      "id": "Q26",
+      "chapter": "7-4",
+      "topic": "Change of base formula",
+      "question": "Use the Change of Base Formula to evaluate $\\log_7 28$. (Round to three decimal places.)",
+      "choices": {
+        "A": "$1.447$",
+        "B": "$1.712$",
+        "C": "$2.807$",
+        "D": "$3.332$"
+      },
+      "answer": "B",
+      "explanation": "$\\log_7 28 = \\dfrac{\\ln 28}{\\ln 7}\\approx \\dfrac{3.3322}{1.9459}\\approx 1.712$."
+    },
+    {
+      "id": "Q27",
+      "chapter": "7-5",
+      "topic": "Solve an exponential equation",
+      "question": "Solve $4^{4x} = 8$.",
+      "choices": {
+        "A": "$x = \\dfrac{3}{8}$",
+        "B": "$x = \\dfrac{3}{4}$",
+        "C": "$x = \\dfrac{1}{2}$",
+        "D": "$x = 2$"
+      },
+      "answer": "A",
+      "explanation": "Common base $2$: $4^{4x} = 2^{8x}$ and $8 = 2^3$. So $8x = 3$, giving $x = \\dfrac{3}{8}$."
+    },
+    {
+      "id": "Q28",
+      "chapter": "8-3",
+      "topic": "Horizontal asymptote of a rational function",
+      "question": "Find the horizontal asymptote of $y = \\dfrac{-4x^6 + 6x + 3}{8x^6 + 9x + 3}$.",
+      "choices": {
+        "A": "$y = 1$",
+        "B": "$y = -\\dfrac{1}{2}$",
+        "C": "$y = 0$",
+        "D": "No horizontal asymptote"
+      },
+      "answer": "B",
+      "explanation": "Numerator and denominator have the same degree ($6$). Horizontal asymptote is the ratio of leading coefficients: $\\dfrac{-4}{8} = -\\dfrac{1}{2}$."
+    },
+    {
+      "id": "Q29",
+      "chapter": "8-4",
+      "topic": "Simplify a rational expression",
+      "question": "Simplify $\\dfrac{p^2 - 4p - 32}{p+4}$ and state any restrictions.",
+      "choices": {
+        "A": "$p-8$;\\; $p\\ne -4$",
+        "B": "$-p+8$;\\; $p\\ne -4$",
+        "C": "$-p-8$;\\; $p\\ne 4$",
+        "D": "$p+8$;\\; $p\\ne 4$"
+      },
+      "answer": "A",
+      "explanation": "Factor numerator: $p^2-4p-32 = (p-8)(p+4)$. Cancel $(p+4)$: result $p-8$, with restriction $p\\ne -4$ (denominator)."
+    },
+    {
+      "id": "Q30",
+      "chapter": "8-4",
+      "topic": "Multiply rational expressions",
+      "question": "Find the product in simplest form: $\\dfrac{4a^5}{7b^4}\\cdot\\dfrac{2b^2}{2a^4}$.",
+      "choices": {
+        "A": "$\\dfrac{4a}{7b^2}$,\\; $a\\ne 0,\\ b\\ne 0$",
+        "B": "$\\dfrac{4a^9}{7b^6}$,\\; $a\\ne 0,\\ b\\ne 0$",
+        "C": "$\\dfrac{7b^2}{4a}$,\\; $a\\ne 0,\\ b\\ne 0$",
+        "D": "$\\dfrac{4}{7}a^9 b^6$,\\; $a\\ne 0,\\ b\\ne 0$"
+      },
+      "answer": "A",
+      "explanation": "Multiply numerators: $4a^5\\cdot 2b^2 = 8a^5 b^2$. Denominators: $7b^4\\cdot 2a^4 = 14 a^4 b^4$. Simplify: $\\dfrac{8a^5b^2}{14a^4b^4} = \\dfrac{4a}{7b^2}$."
+    },
+    {
+      "id": "Q31",
+      "chapter": "8-5",
+      "topic": "Add rational expressions",
+      "question": "Simplify $\\dfrac{7}{a+8} + \\dfrac{7}{a^2-64}$.",
+      "choices": {
+        "A": "$\\dfrac{7a-49}{(a-8)(a+8)}$",
+        "B": "$\\dfrac{7a+63}{(a-8)(a+8)}$",
+        "C": "$\\dfrac{14}{(a-8)(a+8)}$",
+        "D": "$\\dfrac{14}{a^2+a-56}$"
+      },
+      "answer": "A",
+      "explanation": "Note $a^2-64=(a-8)(a+8)$. LCD $=(a-8)(a+8)$. First term becomes $\\dfrac{7(a-8)}{(a-8)(a+8)} = \\dfrac{7a-56}{(a-8)(a+8)}$. Add second: $\\dfrac{7a-56+7}{(a-8)(a+8)} = \\dfrac{7a-49}{(a-8)(a+8)}$."
+    },
+    {
+      "id": "Q32",
+      "chapter": "8-6",
+      "topic": "Solve a rational equation",
+      "question": "Solve $\\dfrac{-2}{x+4} = \\dfrac{4}{x+3}$.",
+      "choices": {
+        "A": "$x = -\\dfrac{13}{6}$",
+        "B": "$x = -\\dfrac{8}{3}$",
+        "C": "$x = -\\dfrac{11}{3}$",
+        "D": "$x = \\dfrac{11}{3}$"
+      },
+      "answer": "C",
+      "explanation": "Cross-multiply: $-2(x+3) = 4(x+4) \\Rightarrow -2x-6 = 4x+16 \\Rightarrow -22 = 6x \\Rightarrow x = -\\dfrac{11}{3}$."
+    }
+  ]
+}

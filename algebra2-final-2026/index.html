@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Honors Algebra II — Final Exam Practice Cards</title>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --card-bg: #ffffff;
+    --text: #1a1a1a;
+    --muted: #5f6368;
+    --primary: #1565c0;
+    --primary-light: #e3f2fd;
+    --correct: #2e7d32;
+    --correct-light: #e8f5e9;
+    --incorrect: #c62828;
+    --incorrect-light: #ffebee;
+    --border: #e0e0e0;
+    --shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+
+  header {
+    background: var(--primary);
+    color: white;
+    padding: 18px 24px;
+    box-shadow: var(--shadow);
+  }
+  header h1 { margin: 0; font-size: 18px; font-weight: 600; }
+  header .meta { font-size: 13px; opacity: 0.9; margin-top: 4px; }
+
+  main {
+    max-width: 760px;
+    margin: 24px auto;
+    padding: 0 16px;
+  }
+
+  .progress-bar {
+    background: var(--border);
+    border-radius: 999px;
+    height: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    background: var(--primary);
+    height: 100%;
+    transition: width 0.3s ease;
+  }
+
+  .progress-text {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+  }
+
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .chip {
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-weight: 600;
+  }
+
+  .question-text {
+    font-size: 17px;
+    margin-bottom: 22px;
+    line-height: 1.7;
+  }
+
+  .choices {
+    display: grid;
+    gap: 10px;
+  }
+
+  .choice {
+    background: #fafbfc;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 15px;
+  }
+  .choice:hover:not(.disabled) {
+    border-color: var(--primary);
+    background: var(--primary-light);
+  }
+  .choice .letter {
+    font-weight: 700;
+    color: var(--primary);
+    min-width: 22px;
+  }
+  .choice .text { flex: 1; }
+  .choice.disabled { cursor: default; }
+  .choice.correct {
+    background: var(--correct-light);
+    border-color: var(--correct);
+  }
+  .choice.correct .letter { color: var(--correct); }
+  .choice.incorrect {
+    background: var(--incorrect-light);
+    border-color: var(--incorrect);
+  }
+  .choice.incorrect .letter { color: var(--incorrect); }
+
+  .feedback {
+    margin-top: 18px;
+    padding: 14px 16px;
+    border-radius: 8px;
+    background: var(--primary-light);
+    border-left: 4px solid var(--primary);
+    font-size: 15px;
+  }
+  .feedback.correct {
+    background: var(--correct-light);
+    border-left-color: var(--correct);
+  }
+  .feedback.incorrect {
+    background: var(--incorrect-light);
+    border-left-color: var(--incorrect);
+  }
+  .feedback .label {
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  button {
+    border: none;
+    border-radius: 8px;
+    padding: 11px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: inherit;
+  }
+  button.primary {
+    background: var(--primary);
+    color: white;
+  }
+  button.primary:hover { background: #0d47a1; }
+  button.secondary {
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+  }
+  button.secondary:hover { background: var(--primary-light); }
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .summary {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+  .summary h2 { margin: 0 0 12px; color: var(--primary); }
+  .score {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 16px 0;
+  }
+  .score-detail { color: var(--muted); font-size: 14px; }
+
+  .topic-breakdown {
+    text-align: left;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  .topic-breakdown h3 {
+    font-size: 14px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 12px;
+  }
+  .topic-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 14px;
+    border-bottom: 1px dashed var(--border);
+  }
+
+  .toolbar {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .toolbar label {
+    font-size: 13px;
+    color: var(--muted);
+    margin-right: 8px;
+  }
+  .toolbar select, .toolbar input[type="number"] {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 8px;
+    font-size: 13px;
+    font-family: inherit;
+    margin-right: 12px;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 16px;
+    margin-top: 24px;
+  }
+</style>
+</head>
+
+<body>
+<header>
+  <h1 id="page-title">Honors Algebra II — Final Exam Practice</h1>
+  <div class="meta" id="page-meta"></div>
+</header>
+
+<main>
+  <div class="toolbar" id="toolbar">
+    <label for="num-questions">Number of cards:</label>
+    <input type="number" id="num-questions" min="5" max="32" value="15">
+    <label for="filter-chapter">Chapter:</label>
+    <select id="filter-chapter">
+      <option value="all">All (Ch 5–8)</option>
+      <option value="5">Ch 5 — Polynomials</option>
+      <option value="6">Ch 6 — Radicals/Rational Exp</option>
+      <option value="7">Ch 7 — Exp/Log</option>
+      <option value="8">Ch 8 — Rational Functions</option>
+    </select>
+    <button class="primary" id="start-btn">Start</button>
+  </div>
+
+  <div id="quiz-area" style="display:none;">
+    <div class="progress-text" id="progress-text"></div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    <div id="card-container"></div>
+  </div>
+
+  <div id="summary-area" style="display:none;"></div>
+</main>
+
+<footer>
+  iWork Math Academy — 원장 이상열 · Generated 2026-05-01
+</footer>
+
+<script>
+'use strict';
+
+let allQuestions = [];
+let metaInfo = {};
+let currentQuestions = [];
+let currentIndex = 0;
+let answers = [];   // { qid, picked, correct }
+
+async function loadQuestions() {
+  const res = await fetch('questions.json');
+  const data = await res.json();
+  allQuestions = data.questions;
+  metaInfo = data;
+  document.getElementById('page-title').textContent = data.title;
+  document.getElementById('page-meta').textContent =
+    `${data.subject} · Exam: ${data.exam_date} · Instructor: ${data.instructor}`;
+}
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function startQuiz() {
+  const filter = document.getElementById('filter-chapter').value;
+  const num = parseInt(document.getElementById('num-questions').value, 10);
+
+  let pool = allQuestions;
+  if (filter !== 'all') {
+    pool = allQuestions.filter(q => q.chapter.startsWith(filter));
+  }
+
+  if (pool.length === 0) {
+    alert('No questions match the selected chapter.');
+    return;
+  }
+
+  currentQuestions = shuffle(pool).slice(0, Math.min(num, pool.length));
+  currentIndex = 0;
+  answers = [];
+
+  document.getElementById('toolbar').style.display = 'none';
+  document.getElementById('summary-area').style.display = 'none';
+  document.getElementById('quiz-area').style.display = 'block';
+
+  renderCard();
+}
+
+function renderCard() {
+  const q = currentQuestions[currentIndex];
+  const total = currentQuestions.length;
+
+  document.getElementById('progress-text').textContent =
+    `Card ${currentIndex + 1} of ${total}`;
+  document.getElementById('progress-fill').style.width =
+    `${((currentIndex) / total) * 100}%`;
+
+  const container = document.getElementById('card-container');
+  container.innerHTML = `
+    <div class="card">
+      <div class="card-meta">
+        <span class="chip">Ch ${q.chapter} · ${q.topic}</span>
+        <span>${q.id}</span>
+      </div>
+      <div class="question-text">${q.question}</div>
+      <div class="choices" id="choices-list"></div>
+      <div id="feedback-area"></div>
+      <div class="controls">
+        <button class="secondary" id="skip-btn">Skip</button>
+        <button class="primary" id="next-btn" style="display:none;">
+          ${currentIndex + 1 === total ? 'Finish' : 'Next →'}
+        </button>
+      </div>
+    </div>
+  `;
+
+  const choicesList = document.getElementById('choices-list');
+  for (const letter of ['A', 'B', 'C', 'D']) {
+    if (!(letter in q.choices)) continue;
+    const div = document.createElement('div');
+    div.className = 'choice';
+    div.dataset.letter = letter;
+    div.innerHTML = `<span class="letter">${letter}.</span><span class="text">${q.choices[letter]}</span>`;
+    div.addEventListener('click', () => pickAnswer(letter));
+    choicesList.appendChild(div);
+  }
+
+  document.getElementById('skip-btn').addEventListener('click', () => skipCard());
+  document.getElementById('next-btn').addEventListener('click', () => nextCard());
+
+  if (window.MathJax && MathJax.typesetPromise) {
+    MathJax.typesetPromise([container]).catch(err => console.warn(err));
+  }
+}
+
+function pickAnswer(letter) {
+  const q = currentQuestions[currentIndex];
+  const correct = (letter === q.answer);
+  answers.push({ qid: q.id, picked: letter, correct });
+
+  const choices = document.querySelectorAll('.choice');
+  choices.forEach(c => {
+    c.classList.add('disabled');
+    c.replaceWith(c.cloneNode(true)); // remove listeners
+  });
+  document.querySelectorAll('.choice').forEach(c => {
+    const cl = c.dataset.letter;
+    if (cl === q.answer) c.classList.add('correct');
+    else if (cl === letter) c.classList.add('incorrect');
+  });
+
+  const fb = document.getElementById('feedback-area');
+  fb.innerHTML = `
+    <div class="feedback ${correct ? 'correct' : 'incorrect'}">
+      <span class="label">${correct ? '✓ Correct' : '✗ Incorrect'} — Answer: ${q.answer}</span>
+      <div>${q.explanation}</div>
+    </div>
+  `;
+
+  document.getElementById('skip-btn').style.display = 'none';
+  document.getElementById('next-btn').style.display = 'inline-block';
+
+  if (window.MathJax && MathJax.typesetPromise) {
+    MathJax.typesetPromise([fb]).catch(err => console.warn(err));
+  }
+}
+
+function skipCard() {
+  const q = currentQuestions[currentIndex];
+  answers.push({ qid: q.id, picked: null, correct: false });
+  nextCard();
+}
+
+function nextCard() {
+  currentIndex++;
+  if (currentIndex >= currentQuestions.length) {
+    showSummary();
+  } else {
+    renderCard();
+  }
+}
+
+function showSummary() {
+  document.getElementById('quiz-area').style.display = 'none';
+  const correctCount = answers.filter(a => a.correct).length;
+  const total = answers.length;
+  const pct = Math.round((correctCount / total) * 100);
+
+  // Per-chapter breakdown
+  const chapterStats = {};
+  answers.forEach(a => {
+    const q = currentQuestions.find(x => x.id === a.qid);
+    const ch = q.chapter.split('-')[0];
+    if (!chapterStats[ch]) chapterStats[ch] = { right: 0, total: 0 };
+    chapterStats[ch].total++;
+    if (a.correct) chapterStats[ch].right++;
+  });
+
+  let breakdownHTML = '<div class="topic-breakdown"><h3>By Chapter</h3>';
+  Object.keys(chapterStats).sort().forEach(ch => {
+    const s = chapterStats[ch];
+    breakdownHTML += `<div class="topic-row"><span>Chapter ${ch}</span><span>${s.right} / ${s.total}</span></div>`;
+  });
+  breakdownHTML += '</div>';
+
+  const summary = document.getElementById('summary-area');
+  summary.innerHTML = `
+    <div class="summary">
+      <h2>Session Complete</h2>
+      <div class="score">${correctCount} / ${total}</div>
+      <div class="score-detail">${pct}% correct · ${total - correctCount} missed</div>
+      ${breakdownHTML}
+      <div class="controls" style="justify-content:center; margin-top:24px;">
+        <button class="primary" onclick="location.reload()">Try Another Set</button>
+      </div>
+    </div>
+  `;
+  summary.style.display = 'block';
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  await loadQuestions();
+  document.getElementById('start-btn').addEventListener('click', startQuiz);
+});
+</script>
+</body>
+</html>

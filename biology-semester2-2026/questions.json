@@ -1,0 +1,1138 @@
+{
+  "title": "Honors Biology — Semester 2 Final Practice",
+  "subject": "Honors Biology",
+  "instructor": "원장 이상열",
+  "source": "APIS Honors Biology Semester 2 Study Guide (2025–26)",
+  "ui": {
+    "category_label": "Section",
+    "category_short": "Sec",
+    "categories": [
+      {"id": "I",   "label": "I — Gene Expression & Central Dogma"},
+      {"id": "II",  "label": "II — Mutations"},
+      {"id": "III", "label": "III — Genetics & Inheritance Patterns"},
+      {"id": "IV",  "label": "IV — Variation & Adaptations"}
+    ]
+  },
+  "questions": [
+    {
+      "id": "B01",
+      "section": "I",
+      "topic": "Central Dogma pathway",
+      "question": "Which sequence correctly describes the Central Dogma of molecular biology?",
+      "choices": {
+        "A": "DNA → Protein → mRNA → Ribosome → Amino Acid",
+        "B": "DNA → mRNA → Ribosome → Amino Acid Chain → Protein",
+        "C": "Protein → mRNA → DNA → Amino Acid",
+        "D": "mRNA → DNA → Ribosome → Protein"
+      },
+      "answer": "B",
+      "explanation": "The Central Dogma flows from DNA → mRNA (transcription) → Ribosome reads mRNA → Amino Acid Chain assembled → folds into a functional Protein."
+    },
+    {
+      "id": "B02",
+      "section": "I",
+      "topic": "Why mRNA is needed",
+      "question": "Why does the cell create an mRNA copy of DNA instead of using DNA directly during translation?",
+      "choices": {
+        "A": "DNA is too large to leave the nucleus",
+        "B": "DNA is too fragile to use in protein synthesis",
+        "C": "Ribosomes cannot read DNA's double helix",
+        "D": "DNA contains errors that mRNA fixes"
+      },
+      "answer": "A",
+      "explanation": "DNA stays in the nucleus because the chromosome is too large to pass through nuclear pores. mRNA is a portable, single-stranded copy that can travel to ribosomes in the cytoplasm."
+    },
+    {
+      "id": "B03",
+      "section": "I",
+      "topic": "Transcription enzyme",
+      "question": "Which enzyme unzips DNA and adds complementary RNA nucleotides during transcription?",
+      "choices": {
+        "A": "DNA helicase",
+        "B": "DNA polymerase",
+        "C": "RNA polymerase",
+        "D": "Reverse transcriptase"
+      },
+      "answer": "C",
+      "explanation": "RNA polymerase performs both functions: it unwinds the DNA template and pairs free RNA nucleotides (A, U, C, G) to the exposed bases."
+    },
+    {
+      "id": "B04",
+      "section": "I",
+      "topic": "RNA bases",
+      "question": "When DNA is transcribed into RNA, which base replaces thymine (T)?",
+      "choices": {
+        "A": "Adenine (A)",
+        "B": "Cytosine (C)",
+        "C": "Guanine (G)",
+        "D": "Uracil (U)"
+      },
+      "answer": "D",
+      "explanation": "RNA uses uracil (U) instead of thymine (T). So in mRNA, A pairs with U (instead of T) when reading the DNA template."
+    },
+    {
+      "id": "B05",
+      "section": "I",
+      "topic": "Location of transcription",
+      "question": "Where in the eukaryotic cell does transcription occur?",
+      "choices": {
+        "A": "Cytoplasm",
+        "B": "Nucleus",
+        "C": "Mitochondrion only",
+        "D": "Rough endoplasmic reticulum"
+      },
+      "answer": "B",
+      "explanation": "Transcription occurs in the nucleus, where the DNA is housed. The mRNA is then exported to the cytoplasm for translation."
+    },
+    {
+      "id": "B06",
+      "section": "I",
+      "topic": "Codons",
+      "question": "What is a codon?",
+      "choices": {
+        "A": "A single DNA base",
+        "B": "A group of three mRNA nucleotides that codes for one amino acid",
+        "C": "An entire gene",
+        "D": "A protein-coding chromosome"
+      },
+      "answer": "B",
+      "explanation": "A codon is a triplet of mRNA bases (e.g., AUG, UUC) that the ribosome reads to specify a single amino acid in the growing polypeptide."
+    },
+    {
+      "id": "B07",
+      "section": "I",
+      "topic": "tRNA function",
+      "question": "What is the role of tRNA molecules during translation?",
+      "choices": {
+        "A": "They unzip DNA strands",
+        "B": "They carry matching amino acids to the ribosome using their anticodons",
+        "C": "They form the ribosome's structure",
+        "D": "They copy DNA into mRNA"
+      },
+      "answer": "B",
+      "explanation": "Each tRNA has an anticodon that base-pairs with an mRNA codon, delivering the corresponding amino acid so the ribosome can add it to the growing chain."
+    },
+    {
+      "id": "B08",
+      "section": "I",
+      "topic": "Location of translation",
+      "question": "Where does translation take place in the cell?",
+      "choices": {
+        "A": "Nucleus",
+        "B": "Ribosomes (in the cytoplasm or on the rough ER)",
+        "C": "Golgi apparatus",
+        "D": "Lysosomes"
+      },
+      "answer": "B",
+      "explanation": "Ribosomes are the site of translation. They can be free in the cytoplasm or attached to the rough endoplasmic reticulum."
+    },
+    {
+      "id": "B09",
+      "section": "I",
+      "topic": "Importance of proteins",
+      "question": "Why are proteins called the \"physical expression of genes\"?",
+      "choices": {
+        "A": "Because they store genetic information for the next generation",
+        "B": "Because they make up the cell membrane only",
+        "C": "Because they determine traits and carry out cellular functions",
+        "D": "Because they replicate DNA"
+      },
+      "answer": "C",
+      "explanation": "Proteins build structures (e.g., hair, enzymes, receptors) and carry out the cell's functions, so a gene's effect is realized when its protein is made."
+    },
+    {
+      "id": "B10",
+      "section": "II",
+      "topic": "Definition of mutation",
+      "question": "What best defines a mutation?",
+      "choices": {
+        "A": "A temporary change in protein folding",
+        "B": "A permanent change to the base sequence of DNA",
+        "C": "A reversible chemical modification of an amino acid",
+        "D": "Any error during translation"
+      },
+      "answer": "B",
+      "explanation": "A mutation is a permanent alteration to the DNA base sequence. It can be caused by replication errors or by external mutagens."
+    },
+    {
+      "id": "B11",
+      "section": "II",
+      "topic": "Substitution mutation",
+      "question": "A substitution mutation occurs when:",
+      "choices": {
+        "A": "One DNA base is replaced by another",
+        "B": "A base is added to the sequence",
+        "C": "A base is removed from the sequence",
+        "D": "An entire chromosome is duplicated"
+      },
+      "answer": "A",
+      "explanation": "Substitution swaps one base for another (e.g., A→G). Insertions and deletions cause frameshift mutations instead."
+    },
+    {
+      "id": "B12",
+      "section": "II",
+      "topic": "Silent mutations",
+      "question": "Why do some substitution mutations have no effect on the protein produced?",
+      "choices": {
+        "A": "Because mRNA fixes the error",
+        "B": "Because of the redundancy of the genetic code — multiple codons can specify the same amino acid",
+        "C": "Because ribosomes skip the mutated codon",
+        "D": "Because tRNA always finds the correct amino acid"
+      },
+      "answer": "B",
+      "explanation": "Several different codons can code for the same amino acid (e.g., UUU and UUC both code for phenylalanine), so a substitution may not change the amino acid. These are called silent mutations."
+    },
+    {
+      "id": "B13",
+      "section": "II",
+      "topic": "Frameshift mutation",
+      "question": "Why do frameshift mutations (insertions or deletions) usually destroy protein function?",
+      "choices": {
+        "A": "They prevent transcription from starting",
+        "B": "They shift the reading frame, changing every codon downstream",
+        "C": "They speed up translation",
+        "D": "They convert proteins to lipids"
+      },
+      "answer": "B",
+      "explanation": "Adding or deleting bases (not in multiples of three) shifts how codons are read. Every triplet after the mutation is altered, usually producing a non-functional protein."
+    },
+    {
+      "id": "B14",
+      "section": "II",
+      "topic": "Heritable mutations",
+      "question": "Which type of mutation can be passed to offspring?",
+      "choices": {
+        "A": "Mutations in skin cells (somatic)",
+        "B": "Mutations in liver cells (somatic)",
+        "C": "Mutations in gametes (sperm or egg)",
+        "D": "All mutations are inherited equally"
+      },
+      "answer": "C",
+      "explanation": "Only mutations in gametes (germ-line cells) are passed to the next generation. Somatic mutations affect the individual but are not inherited."
+    },
+    {
+      "id": "B15",
+      "section": "II",
+      "topic": "Mutagens",
+      "question": "Which of the following is an example of a mutagen?",
+      "choices": {
+        "A": "Pure water",
+        "B": "Ultraviolet (UV) radiation",
+        "C": "Glucose",
+        "D": "Oxygen at normal levels"
+      },
+      "answer": "B",
+      "explanation": "Mutagens are external agents that increase mutation rates. UV radiation, X-rays, and certain chemicals (e.g., benzene) are common mutagens."
+    },
+    {
+      "id": "B16",
+      "section": "III",
+      "topic": "Dihybrid cross ratio",
+      "question": "What is the expected phenotypic ratio of a dihybrid cross between two heterozygotes (e.g., AaBb × AaBb), with two unlinked traits showing simple dominance?",
+      "choices": {
+        "A": "3:1",
+        "B": "1:1:1:1",
+        "C": "9:3:3:1",
+        "D": "1:2:1"
+      },
+      "answer": "C",
+      "explanation": "AaBb × AaBb produces a 9:3:3:1 ratio: 9 with both dominant traits, 3 with one dominant and one recessive, 3 with the opposite combo, and 1 with both recessive."
+    },
+    {
+      "id": "B17",
+      "section": "III",
+      "topic": "Gamete generation (FOIL)",
+      "question": "Using FOIL, which gametes does a parent with genotype AaBb produce?",
+      "choices": {
+        "A": "AA, BB, aa, bb",
+        "B": "AB, Ab, aB, ab",
+        "C": "AB and ab only",
+        "D": "Aa and Bb only"
+      },
+      "answer": "B",
+      "explanation": "FOIL (First, Outer, Inner, Last) on AaBb gives the four allele combinations: AB, Ab, aB, ab — the four possible gametes (assuming unlinked genes)."
+    },
+    {
+      "id": "B18",
+      "section": "III",
+      "topic": "Linked genes",
+      "question": "How do linked genes affect the standard dihybrid 9:3:3:1 ratio?",
+      "choices": {
+        "A": "They have no effect on the ratio",
+        "B": "They produce only the 9:3:3:1 ratio more reliably",
+        "C": "They alter the ratio because the genes are inherited together more often than expected",
+        "D": "They convert the ratio to a 3:1"
+      },
+      "answer": "C",
+      "explanation": "Genes located close together on the same chromosome tend to be inherited as a unit, so parental allele combinations show up more often than predicted by 9:3:3:1."
+    },
+    {
+      "id": "B19",
+      "section": "III",
+      "topic": "Lethal alleles",
+      "question": "What phenotypic ratio is typically observed when an allele is lethal in the homozygous state and parents are both heterozygous?",
+      "choices": {
+        "A": "3:1",
+        "B": "2:1",
+        "C": "1:1",
+        "D": "9:3:3:1"
+      },
+      "answer": "B",
+      "explanation": "Of the expected 1:2:1 genotypic ratio, the homozygous-lethal class dies (often in the embryo). The surviving ratio of heterozygotes to the other homozygote is 2:1."
+    },
+    {
+      "id": "B20",
+      "section": "III",
+      "topic": "Codominance example",
+      "question": "Which inheritance pattern is illustrated by AB blood type, where both A and B antigens appear on red blood cells?",
+      "choices": {
+        "A": "Incomplete dominance",
+        "B": "Codominance",
+        "C": "Sex-linked recessive",
+        "D": "Polygenic inheritance"
+      },
+      "answer": "B",
+      "explanation": "Codominance means both alleles are fully and equally expressed in the heterozygote. AB blood type expresses both A and B antigens — neither is masked."
+    },
+    {
+      "id": "B21",
+      "section": "III",
+      "topic": "Incomplete dominance example",
+      "question": "Pink flowers from a cross of red and white parents is a classic example of which inheritance pattern?",
+      "choices": {
+        "A": "Codominance",
+        "B": "Complete dominance",
+        "C": "Incomplete dominance",
+        "D": "Linked genes"
+      },
+      "answer": "C",
+      "explanation": "In incomplete dominance, the heterozygous phenotype is a blend of the two homozygous phenotypes — so red × white yields pink, not red or both colors."
+    },
+    {
+      "id": "B22",
+      "section": "III",
+      "topic": "Pedigree symbols — squares",
+      "question": "On a pedigree chart, what does a square represent?",
+      "choices": {
+        "A": "A male individual",
+        "B": "A female individual",
+        "C": "An affected individual",
+        "D": "A carrier"
+      },
+      "answer": "A",
+      "explanation": "Squares represent males. Circles represent females. A shaded shape (of either type) indicates an individual affected by the trait being tracked."
+    },
+    {
+      "id": "B23",
+      "section": "III",
+      "topic": "Pedigree symbols — shaded",
+      "question": "On a pedigree chart, a shaded shape (square or circle) represents:",
+      "choices": {
+        "A": "A deceased individual",
+        "B": "An individual affected by the trait",
+        "C": "A carrier of the trait",
+        "D": "An adopted child"
+      },
+      "answer": "B",
+      "explanation": "Shading indicates that the individual expresses (is affected by) the trait being tracked through the family."
+    },
+    {
+      "id": "B24",
+      "section": "III",
+      "topic": "Codominance vs incomplete dominance",
+      "question": "Which statement correctly distinguishes codominance from incomplete dominance?",
+      "choices": {
+        "A": "Codominance produces a blended phenotype; incomplete dominance shows both phenotypes side by side",
+        "B": "Codominance shows both alleles fully expressed; incomplete dominance produces a blended phenotype",
+        "C": "They are the same thing",
+        "D": "Both produce a 9:3:3:1 ratio"
+      },
+      "answer": "B",
+      "explanation": "Codominance: both alleles equally and fully expressed (e.g., AB blood). Incomplete dominance: heterozygote shows a blend of the two homozygous phenotypes (e.g., pink flowers)."
+    },
+    {
+      "id": "B25",
+      "section": "IV",
+      "topic": "Sources of variation",
+      "question": "Which of the following is NOT a major source of genetic variation in a population?",
+      "choices": {
+        "A": "Mutations creating new alleles",
+        "B": "Crossing over and independent assortment in meiosis",
+        "C": "Migration (gene flow) between populations",
+        "D": "Mitosis in somatic cells"
+      },
+      "answer": "D",
+      "explanation": "Mitosis produces genetically identical daughter cells, so it does NOT contribute to inherited genetic variation. Meiosis, mutations, and gene flow do."
+    },
+    {
+      "id": "B26",
+      "section": "IV",
+      "topic": "Continuous variation",
+      "question": "Which of the following is an example of continuous variation?",
+      "choices": {
+        "A": "Blood type (A, B, AB, O)",
+        "B": "Earlobe attachment (attached vs. free)",
+        "C": "Human height",
+        "D": "Tongue rolling (yes or no)"
+      },
+      "answer": "C",
+      "explanation": "Continuous variation shows a range of values along a spectrum (height, hand span). Discontinuous variation falls into distinct categories (blood type, tongue rolling)."
+    },
+    {
+      "id": "B27",
+      "section": "IV",
+      "topic": "Discontinuous variation",
+      "question": "Which of the following is an example of discontinuous variation?",
+      "choices": {
+        "A": "Hand span",
+        "B": "Body weight",
+        "C": "Blood type (A, B, AB, O)",
+        "D": "Skin pigmentation intensity"
+      },
+      "answer": "C",
+      "explanation": "Discontinuous variation has distinct categories with no in-between values. Blood type is either A, B, AB, or O — there is no \"half-A\" type."
+    },
+    {
+      "id": "B28",
+      "section": "IV",
+      "topic": "Structural adaptation",
+      "question": "Which of the following is a STRUCTURAL adaptation?",
+      "choices": {
+        "A": "Bird migration",
+        "B": "A polar bear's thick fur",
+        "C": "A snake producing venom",
+        "D": "A cat being nocturnal"
+      },
+      "answer": "B",
+      "explanation": "Structural adaptations are physical body features (fur, wings, beak shape). Migration is behavioral; venom production is physiological; nocturnal activity is behavioral."
+    },
+    {
+      "id": "B29",
+      "section": "IV",
+      "topic": "Behavioral vs physiological",
+      "question": "Producing venom for defense or hunting is best classified as which type of adaptation?",
+      "choices": {
+        "A": "Structural",
+        "B": "Behavioral",
+        "C": "Physiological",
+        "D": "Evolutionary"
+      },
+      "answer": "C",
+      "explanation": "Physiological adaptations involve internal biochemical processes — venom production, temperature regulation, hibernation chemistry. They are not visible body parts (structural) or actions (behavioral)."
+    },
+    {
+      "id": "B30",
+      "section": "IV",
+      "topic": "Natural selection",
+      "question": "Natural selection acts on individuals based on:",
+      "choices": {
+        "A": "Their ability to find a mate",
+        "B": "Their fit to the environment, which determines survival and reproduction",
+        "C": "Random chance only",
+        "D": "Their willingness to migrate"
+      },
+      "answer": "B",
+      "explanation": "Natural selection favors traits that improve survival and reproduction in a given environment. Better-adapted individuals leave more offspring, shifting allele frequencies over time."
+    },
+    {
+      "id": "B31",
+      "section": "IV",
+      "topic": "Sexual selection",
+      "question": "A peacock's elaborate tail is an example of which selection pressure?",
+      "choices": {
+        "A": "Natural selection (helps survive predators)",
+        "B": "Sexual selection (attracts mates)",
+        "C": "Genetic drift (random)",
+        "D": "Founder effect"
+      },
+      "answer": "B",
+      "explanation": "Sexual selection favors traits that improve mating success, even at a cost to survival. Peacock tails attract peahens but make the male more visible to predators."
+    },
+    {
+      "id": "B32",
+      "section": "IV",
+      "topic": "Genetic drift — bottleneck/founder",
+      "question": "Which scenario best illustrates the FOUNDER effect (a form of genetic drift)?",
+      "choices": {
+        "A": "A natural disaster wipes out 90% of a large population, leaving a small group with skewed allele frequencies",
+        "B": "A small group of individuals leaves to colonize a new island, carrying only a subset of the original gene pool",
+        "C": "A predator selectively eats only camouflaged prey",
+        "D": "Two populations interbreed after migration"
+      },
+      "answer": "B",
+      "explanation": "Founder effect: a small founding group establishes a new population, so its allele frequencies differ from the original population by chance. Bottleneck (option A) is the disaster scenario."
+    },
+    {
+      "id": "B33",
+      "section": "I",
+      "topic": "Start codon",
+      "question": "Which mRNA codon signals the START of translation in most organisms?",
+      "choices": {
+        "A": "UAA",
+        "B": "AUG",
+        "C": "UGA",
+        "D": "UAG"
+      },
+      "answer": "B",
+      "explanation": "AUG codes for methionine and serves as the START codon, telling the ribosome where to begin translating. UAA, UGA, and UAG are all STOP codons."
+    },
+    {
+      "id": "B34",
+      "section": "I",
+      "topic": "Stop codons",
+      "question": "How many STOP codons are there in the standard genetic code?",
+      "choices": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "answer": "C",
+      "explanation": "There are three STOP codons: UAA, UAG, and UGA. They do not code for any amino acid; instead they release the completed polypeptide from the ribosome."
+    },
+    {
+      "id": "B35",
+      "section": "I",
+      "topic": "Complementary base pairing — DNA→mRNA",
+      "question": "What mRNA sequence is produced from the DNA template strand 3'-TACGGA-5'?",
+      "choices": {
+        "A": "5'-AUGCCU-3'",
+        "B": "5'-AUGCCT-3'",
+        "C": "5'-TACGGA-3'",
+        "D": "5'-UACGGA-3'"
+      },
+      "answer": "A",
+      "explanation": "Read 3'→5' on the template, build mRNA 5'→3': T→A, A→U, C→G, G→C, G→C, A→U. So 3'-TACGGA-5' → 5'-AUGCCU-3'. Note U replaces T in RNA."
+    },
+    {
+      "id": "B36",
+      "section": "I",
+      "topic": "Number of codons",
+      "question": "If a codon is 3 nucleotides long and there are 4 possible bases (A, U, C, G), how many distinct codons are possible?",
+      "choices": {
+        "A": "12",
+        "B": "20",
+        "C": "61",
+        "D": "64"
+      },
+      "answer": "D",
+      "explanation": "$4^3 = 64$ possible codons. Of these, 61 code for amino acids and 3 are STOP codons. There are only 20 standard amino acids, so the code is redundant."
+    },
+    {
+      "id": "B37",
+      "section": "I",
+      "topic": "tRNA anticodon",
+      "question": "If an mRNA codon is 5'-GCA-3', what is the corresponding tRNA anticodon?",
+      "choices": {
+        "A": "5'-CGU-3'",
+        "B": "3'-CGU-5'",
+        "C": "5'-UGC-3'",
+        "D": "3'-GCA-5'"
+      },
+      "answer": "B",
+      "explanation": "The anticodon is antiparallel and complementary to the codon. mRNA 5'-GCA-3' pairs with tRNA 3'-CGU-5' (reading anticodon in 3'→5' direction)."
+    },
+    {
+      "id": "B38",
+      "section": "I",
+      "topic": "Polypeptide vs protein",
+      "question": "What is the difference between a polypeptide and a protein?",
+      "choices": {
+        "A": "They are the same thing",
+        "B": "A polypeptide is a chain of amino acids; a protein is a folded, functional polypeptide (or set of polypeptides)",
+        "C": "A polypeptide is made of nucleotides; a protein is made of amino acids",
+        "D": "A polypeptide is shorter than 100 amino acids; a protein is longer"
+      },
+      "answer": "B",
+      "explanation": "Translation produces a polypeptide — a linear chain of amino acids. Once the chain folds into its 3D shape (and possibly combines with other chains), it becomes a functional protein."
+    },
+    {
+      "id": "B39",
+      "section": "I",
+      "topic": "DNA vs RNA structure",
+      "question": "Which of the following is TRUE about RNA but NOT about DNA?",
+      "choices": {
+        "A": "Made of nucleotides",
+        "B": "Contains the sugar ribose and the base uracil",
+        "C": "Forms a double helix",
+        "D": "Stored in the nucleus only"
+      },
+      "answer": "B",
+      "explanation": "RNA uses ribose (DNA uses deoxyribose) and uracil (DNA uses thymine). RNA is also typically single-stranded, while DNA is double-stranded."
+    },
+    {
+      "id": "B40",
+      "section": "I",
+      "topic": "Steps of protein synthesis",
+      "question": "Place these steps of protein synthesis in the correct order: (1) Ribosome reads mRNA codons, (2) RNA polymerase makes mRNA from DNA, (3) tRNA delivers amino acids, (4) Polypeptide folds into protein.",
+      "choices": {
+        "A": "1, 2, 3, 4",
+        "B": "2, 1, 3, 4",
+        "C": "2, 3, 1, 4",
+        "D": "3, 2, 1, 4"
+      },
+      "answer": "B",
+      "explanation": "Transcription first (2: DNA → mRNA), then translation: ribosome reads codons (1) while tRNAs deliver matching amino acids (3), and finally the chain folds (4)."
+    },
+    {
+      "id": "B41",
+      "section": "I",
+      "topic": "Number of amino acids",
+      "question": "How many standard amino acids are used to build proteins in living organisms?",
+      "choices": {
+        "A": "4",
+        "B": "20",
+        "C": "61",
+        "D": "64"
+      },
+      "answer": "B",
+      "explanation": "There are 20 standard amino acids. The genetic code has 64 codons, but multiple codons can code for the same amino acid (redundancy)."
+    },
+    {
+      "id": "B42",
+      "section": "I",
+      "topic": "Gene definition",
+      "question": "Which statement best defines a gene?",
+      "choices": {
+        "A": "A protein that determines a trait",
+        "B": "A segment of DNA that codes for a functional product (typically a protein)",
+        "C": "An entire chromosome",
+        "D": "A single nucleotide"
+      },
+      "answer": "B",
+      "explanation": "A gene is a stretch of DNA that contains the instructions for making a protein (or a functional RNA). Many genes together make up a chromosome."
+    },
+    {
+      "id": "B43",
+      "section": "I",
+      "topic": "RNA polymerase substrate",
+      "question": "Which template does RNA polymerase use to build an mRNA molecule?",
+      "choices": {
+        "A": "The sense (coding) strand of DNA",
+        "B": "The antisense (template) strand of DNA",
+        "C": "Another mRNA molecule",
+        "D": "A protein scaffold"
+      },
+      "answer": "B",
+      "explanation": "RNA polymerase reads the antisense (template) strand of DNA in the 3'→5' direction and synthesizes a complementary mRNA in the 5'→3' direction. The mRNA sequence matches the sense strand (with U for T)."
+    },
+    {
+      "id": "B44",
+      "section": "II",
+      "topic": "Point mutation types",
+      "question": "Which type of substitution mutation changes one amino acid into a different amino acid?",
+      "choices": {
+        "A": "Silent",
+        "B": "Missense",
+        "C": "Nonsense",
+        "D": "Frameshift"
+      },
+      "answer": "B",
+      "explanation": "Missense: substitution changes the codon to one that codes for a different amino acid. Silent: same amino acid. Nonsense: changes to a STOP codon. Frameshift: insertion/deletion."
+    },
+    {
+      "id": "B45",
+      "section": "II",
+      "topic": "Nonsense mutation",
+      "question": "What is a nonsense mutation?",
+      "choices": {
+        "A": "A mutation that has no effect on the protein",
+        "B": "A substitution that changes a codon into a STOP codon, prematurely ending translation",
+        "C": "A mutation that adds extra DNA bases",
+        "D": "A mutation that occurs only in non-coding DNA"
+      },
+      "answer": "B",
+      "explanation": "Nonsense mutations turn an amino-acid codon into a STOP codon, truncating the protein. The resulting shortened protein is usually non-functional."
+    },
+    {
+      "id": "B46",
+      "section": "II",
+      "topic": "Insertion vs substitution",
+      "question": "Why is an INSERTION of one base usually more harmful to a protein than a SUBSTITUTION of one base?",
+      "choices": {
+        "A": "Insertions are larger and slower to repair",
+        "B": "Insertions shift the reading frame, altering every codon downstream; substitutions affect only one codon",
+        "C": "Substitutions never affect the protein",
+        "D": "Insertions occur only in essential genes"
+      },
+      "answer": "B",
+      "explanation": "A single-base insertion shifts the entire reading frame, changing every codon after the insertion point. A substitution changes only the one codon containing the changed base."
+    },
+    {
+      "id": "B47",
+      "section": "II",
+      "topic": "Mutation in introns",
+      "question": "Which mutation is LEAST likely to affect the protein produced by a gene?",
+      "choices": {
+        "A": "A frameshift in the middle of an exon",
+        "B": "A nonsense mutation early in the coding region",
+        "C": "A substitution deep within an intron (non-coding region)",
+        "D": "A deletion of the start codon"
+      },
+      "answer": "C",
+      "explanation": "Introns are removed during mRNA processing, so most mutations within introns do not affect the final protein. The other options all directly damage the protein."
+    },
+    {
+      "id": "B48",
+      "section": "II",
+      "topic": "Cancer-causing mutations",
+      "question": "Cancer is often caused by accumulated mutations in which type of cells?",
+      "choices": {
+        "A": "Gametes only",
+        "B": "Somatic cells",
+        "C": "Bacterial cells",
+        "D": "Plant cells exclusively"
+      },
+      "answer": "B",
+      "explanation": "Cancer arises from somatic (body) cell mutations that disrupt cell-cycle control, leading to uncontrolled growth. These mutations are not inherited but cause disease in the individual."
+    },
+    {
+      "id": "B49",
+      "section": "II",
+      "topic": "Chemical mutagens",
+      "question": "Which of the following is an example of a CHEMICAL mutagen?",
+      "choices": {
+        "A": "Ultraviolet radiation",
+        "B": "X-rays",
+        "C": "Tobacco smoke (contains benzopyrene)",
+        "D": "Cosmic rays"
+      },
+      "answer": "C",
+      "explanation": "Chemical mutagens include cigarette smoke compounds, asbestos, and certain pesticides. UV, X-rays, and cosmic rays are physical (radiation) mutagens."
+    },
+    {
+      "id": "B50",
+      "section": "II",
+      "topic": "Sickle cell as a missense example",
+      "question": "Sickle-cell anemia is caused by a single base substitution that changes one amino acid in hemoglobin. This is an example of:",
+      "choices": {
+        "A": "A frameshift mutation",
+        "B": "A silent mutation",
+        "C": "A missense mutation",
+        "D": "A chromosomal duplication"
+      },
+      "answer": "C",
+      "explanation": "Sickle-cell is the textbook example of a missense mutation: GAG → GTG changes glutamic acid to valine in the beta-globin chain, deforming red blood cells."
+    },
+    {
+      "id": "B51",
+      "section": "II",
+      "topic": "Repair mechanisms",
+      "question": "Why do most random mutations not cause obvious problems in an organism?",
+      "choices": {
+        "A": "Cells have DNA repair enzymes that fix many mutations",
+        "B": "Most mutations are silent, are in non-coding DNA, or are repaired before they matter",
+        "C": "Both A and B",
+        "D": "Mutations only happen in non-essential genes"
+      },
+      "answer": "C",
+      "explanation": "Both factors apply. DNA repair enzymes (e.g., proofreading by polymerase) fix many errors, and many mutations land in introns, intergenic regions, or are silent."
+    },
+    {
+      "id": "B52",
+      "section": "II",
+      "topic": "Beneficial mutations",
+      "question": "Which statement about mutations is MOST accurate?",
+      "choices": {
+        "A": "All mutations are harmful",
+        "B": "All mutations are beneficial",
+        "C": "Most mutations are neutral; a few are harmful, and rarely some are beneficial",
+        "D": "Mutations cannot be inherited"
+      },
+      "answer": "C",
+      "explanation": "Most mutations are neutral (silent or in non-coding regions). A small fraction is harmful, and an even smaller fraction is beneficial — these rare beneficial mutations fuel evolution."
+    },
+    {
+      "id": "B53",
+      "section": "II",
+      "topic": "Frameshift due to in-frame deletion",
+      "question": "Which insertion or deletion would NOT cause a frameshift mutation?",
+      "choices": {
+        "A": "Inserting 1 base",
+        "B": "Deleting 2 bases",
+        "C": "Deleting 3 bases (one full codon)",
+        "D": "Inserting 4 bases"
+      },
+      "answer": "C",
+      "explanation": "Inserting or deleting bases in multiples of 3 keeps the reading frame intact (just adds or removes one whole amino acid). Other amounts shift the frame."
+    },
+    {
+      "id": "B54",
+      "section": "II",
+      "topic": "Mutation rate",
+      "question": "Which environmental factor would MOST increase a population's mutation rate?",
+      "choices": {
+        "A": "Lower temperature",
+        "B": "Increased exposure to UV radiation",
+        "C": "More rainfall",
+        "D": "Lower oxygen levels"
+      },
+      "answer": "B",
+      "explanation": "UV radiation damages DNA directly (e.g., forming thymine dimers), increasing mutation rates. The other factors do not directly cause genetic change."
+    },
+    {
+      "id": "B55",
+      "section": "II",
+      "topic": "Germline vs somatic",
+      "question": "A man develops a skin cancer mutation in middle age. Will his children inherit this mutation?",
+      "choices": {
+        "A": "Yes, all body cell mutations are inherited",
+        "B": "No, mutations in skin cells are somatic and not passed on",
+        "C": "Yes, but only the daughters",
+        "D": "Only if the father has more than one child"
+      },
+      "answer": "B",
+      "explanation": "Skin cells are somatic. Only mutations in germ-line cells (sperm or egg) are passed to offspring. Acquired somatic mutations affect only the individual."
+    },
+    {
+      "id": "B56",
+      "section": "III",
+      "topic": "Monohybrid cross — heterozygous",
+      "question": "A monohybrid cross between two heterozygous parents (Aa × Aa) for a simple dominant trait gives what phenotypic ratio?",
+      "choices": {
+        "A": "1:1",
+        "B": "3:1",
+        "C": "1:2:1",
+        "D": "9:3:3:1"
+      },
+      "answer": "B",
+      "explanation": "Aa × Aa: offspring are 1 AA, 2 Aa, 1 aa. With simple dominance, AA and Aa share the dominant phenotype, giving 3 dominant : 1 recessive."
+    },
+    {
+      "id": "B57",
+      "section": "III",
+      "topic": "Genotypic vs phenotypic ratio",
+      "question": "For Aa × Aa with incomplete dominance, the phenotypic ratio is:",
+      "choices": {
+        "A": "3:1",
+        "B": "1:2:1",
+        "C": "9:3:3:1",
+        "D": "All offspring identical"
+      },
+      "answer": "B",
+      "explanation": "With incomplete dominance, the heterozygote (Aa) has a distinct phenotype (a blend), so the phenotypic ratio matches the genotypic ratio: 1 AA : 2 Aa : 1 aa."
+    },
+    {
+      "id": "B58",
+      "section": "III",
+      "topic": "Test cross",
+      "question": "What is the purpose of a test cross?",
+      "choices": {
+        "A": "To produce more offspring",
+        "B": "To determine whether an individual showing a dominant trait is homozygous (AA) or heterozygous (Aa)",
+        "C": "To map gene location",
+        "D": "To eliminate recessive alleles"
+      },
+      "answer": "B",
+      "explanation": "A test cross pairs the unknown individual with a homozygous recessive (aa). If any recessive offspring appear, the unknown must be heterozygous (Aa)."
+    },
+    {
+      "id": "B59",
+      "section": "III",
+      "topic": "Probability — multiple traits",
+      "question": "If two heterozygous (Aa) parents produce a child, what is the probability the child is homozygous recessive (aa)?",
+      "choices": {
+        "A": "1/16",
+        "B": "1/4",
+        "C": "1/2",
+        "D": "3/4"
+      },
+      "answer": "B",
+      "explanation": "Aa × Aa Punnett square: AA, Aa, Aa, aa. The aa box is 1 of 4 = 1/4 probability."
+    },
+    {
+      "id": "B60",
+      "section": "III",
+      "topic": "Sex-linked inheritance",
+      "question": "A trait carried on the X chromosome (e.g., color blindness, recessive) shows up more often in which sex, and why?",
+      "choices": {
+        "A": "Females, because they have two X chromosomes",
+        "B": "Males, because they have only one X chromosome (no second X to mask the recessive allele)",
+        "C": "Equally in both sexes",
+        "D": "Only in males, never in females"
+      },
+      "answer": "B",
+      "explanation": "Males (XY) have only one X chromosome, so a single recessive X-linked allele is expressed. Females (XX) need two copies to express the trait, making it rarer in them."
+    },
+    {
+      "id": "B61",
+      "section": "III",
+      "topic": "Multiple alleles — ABO blood",
+      "question": "Human ABO blood type is controlled by three alleles: I^A, I^B, and i. A person with genotype I^A i has what blood type?",
+      "choices": {
+        "A": "Type A",
+        "B": "Type B",
+        "C": "Type AB",
+        "D": "Type O"
+      },
+      "answer": "A",
+      "explanation": "I^A and I^B are codominant with each other, but both are dominant over i. So I^A i expresses only the A antigen — type A blood."
+    },
+    {
+      "id": "B62",
+      "section": "III",
+      "topic": "Polygenic inheritance",
+      "question": "Human skin color and height show a continuous range of phenotypes. This is best explained by:",
+      "choices": {
+        "A": "A single gene with two alleles",
+        "B": "Polygenic inheritance — multiple genes contribute",
+        "C": "Codominance",
+        "D": "Sex-linkage"
+      },
+      "answer": "B",
+      "explanation": "Polygenic traits are controlled by many genes, each adding a small effect. The combined contributions create a continuous distribution rather than discrete categories."
+    },
+    {
+      "id": "B63",
+      "section": "III",
+      "topic": "Pedigree analysis — autosomal recessive",
+      "question": "On a pedigree, two unaffected parents have an affected child. The trait is most likely:",
+      "choices": {
+        "A": "Autosomal dominant",
+        "B": "Autosomal recessive (both parents are carriers)",
+        "C": "Sex-linked dominant",
+        "D": "Cannot be determined"
+      },
+      "answer": "B",
+      "explanation": "If neither parent shows the trait but a child does, both parents must be heterozygous carriers of a recessive allele (Aa × Aa → 1/4 aa)."
+    },
+    {
+      "id": "B64",
+      "section": "III",
+      "topic": "Pedigree symbols — horizontal line",
+      "question": "On a pedigree chart, what does a horizontal line connecting a square and a circle represent?",
+      "choices": {
+        "A": "Siblings",
+        "B": "A mating (couple) producing offspring",
+        "C": "Identical twins",
+        "D": "Same generation"
+      },
+      "answer": "B",
+      "explanation": "A horizontal line between a square (male) and a circle (female) indicates a mating pair. Vertical lines descending from this line lead to their offspring."
+    },
+    {
+      "id": "B65",
+      "section": "III",
+      "topic": "Dihybrid — counts in 9:3:3:1",
+      "question": "In a 9:3:3:1 dihybrid ratio of 320 offspring, approximately how many display BOTH dominant traits?",
+      "choices": {
+        "A": "20",
+        "B": "60",
+        "C": "180",
+        "D": "240"
+      },
+      "answer": "C",
+      "explanation": "9 of 16 = 9/16 × 320 = 180 offspring with both dominant traits."
+    },
+    {
+      "id": "B66",
+      "section": "III",
+      "topic": "Autosomal dominant — affected parent",
+      "question": "If one parent is heterozygous (Aa) for an autosomal dominant disease and the other is homozygous unaffected (aa), what is the chance each child inherits the disease?",
+      "choices": {
+        "A": "0%",
+        "B": "25%",
+        "C": "50%",
+        "D": "100%"
+      },
+      "answer": "C",
+      "explanation": "Aa × aa: half of offspring are Aa (affected), half are aa (unaffected). 50%."
+    },
+    {
+      "id": "B67",
+      "section": "III",
+      "topic": "Carrier definition",
+      "question": "What does it mean for a person to be a 'carrier' of a recessive genetic disorder?",
+      "choices": {
+        "A": "They have two copies of the recessive allele and show the disease",
+        "B": "They are heterozygous (Aa): they do not show the disease but can pass the recessive allele to children",
+        "C": "They have caught the disease from another person",
+        "D": "They are immune to the disease"
+      },
+      "answer": "B",
+      "explanation": "Carriers are heterozygotes who carry one copy of the recessive disease allele but appear unaffected because the dominant allele masks it. They can pass the allele to offspring."
+    },
+    {
+      "id": "B68",
+      "section": "III",
+      "topic": "Punnett square — codominance",
+      "question": "A cross between a homozygous red flower (RR) and a homozygous white flower (WW) showing CODOMINANCE produces what F1 phenotype?",
+      "choices": {
+        "A": "All red",
+        "B": "All white",
+        "C": "All pink (blend)",
+        "D": "Red and white spotted (both colors visible)"
+      },
+      "answer": "D",
+      "explanation": "In codominance both alleles are fully expressed, so the heterozygote shows BOTH colors (e.g., red and white patches). Pink (a blend) would be incomplete dominance."
+    },
+    {
+      "id": "B69",
+      "section": "IV",
+      "topic": "Variation — meiosis crossing over",
+      "question": "Crossing over during meiosis contributes to genetic variation by:",
+      "choices": {
+        "A": "Creating brand new alleles",
+        "B": "Exchanging segments between homologous chromosomes, creating new allele combinations",
+        "C": "Doubling the chromosome number",
+        "D": "Removing harmful alleles"
+      },
+      "answer": "B",
+      "explanation": "Crossing over swaps DNA segments between homologous chromosomes during prophase I of meiosis, producing recombinant chromosomes with new mixes of parental alleles."
+    },
+    {
+      "id": "B70",
+      "section": "IV",
+      "topic": "Independent assortment",
+      "question": "Independent assortment in meiosis means:",
+      "choices": {
+        "A": "All chromosomes always go to the same daughter cell",
+        "B": "Each pair of homologous chromosomes separates independently of the others, creating new combinations",
+        "C": "Sister chromatids never separate",
+        "D": "Only autosomes assort independently"
+      },
+      "answer": "B",
+      "explanation": "During metaphase I, each homologous pair lines up independently, so the maternal/paternal mix in each gamete is random. With 23 human chromosome pairs, this gives $2^{23}$ possible combinations."
+    },
+    {
+      "id": "B71",
+      "section": "IV",
+      "topic": "Gene flow",
+      "question": "Gene flow refers to:",
+      "choices": {
+        "A": "Mutation rate within a single individual",
+        "B": "The movement of alleles between populations through migration and interbreeding",
+        "C": "DNA replication speed",
+        "D": "The spread of mRNA in a cell"
+      },
+      "answer": "B",
+      "explanation": "Gene flow happens when individuals (or pollen, gametes) move between populations and reproduce, transferring alleles and reducing genetic differences between populations."
+    },
+    {
+      "id": "B72",
+      "section": "IV",
+      "topic": "Adaptation — physiological",
+      "question": "Which is an example of a PHYSIOLOGICAL adaptation?",
+      "choices": {
+        "A": "Bird wings",
+        "B": "Hibernation chemistry that lets a bear survive winter",
+        "C": "A wolf hunting in a pack",
+        "D": "A turtle's shell"
+      },
+      "answer": "B",
+      "explanation": "Physiological adaptations are internal biochemical or metabolic processes (hibernation chemistry, venom synthesis, salt regulation). Wings/shell = structural; pack hunting = behavioral."
+    },
+    {
+      "id": "B73",
+      "section": "IV",
+      "topic": "Adaptation — behavioral",
+      "question": "A skunk spraying a foul liquid to deter predators is an example of which type of adaptation?",
+      "choices": {
+        "A": "Structural",
+        "B": "Behavioral",
+        "C": "Physiological",
+        "D": "Both A and C"
+      },
+      "answer": "B",
+      "explanation": "Spraying is a learned/instinctive ACTION, so it is behavioral. The chemical itself is produced physiologically, but the ACT of spraying is behavior."
+    },
+    {
+      "id": "B74",
+      "section": "IV",
+      "topic": "Bottleneck effect",
+      "question": "A volcanic eruption nearly wipes out a population, leaving only 12 survivors with allele frequencies very different from the original group. This is:",
+      "choices": {
+        "A": "Founder effect",
+        "B": "Bottleneck effect",
+        "C": "Natural selection",
+        "D": "Sexual selection"
+      },
+      "answer": "B",
+      "explanation": "Bottleneck: a sudden drastic reduction in population size leaves a small group whose allele frequencies differ from the original by chance. Founder = small group COLONIZES new area."
+    },
+    {
+      "id": "B75",
+      "section": "IV",
+      "topic": "Evolution requires variation",
+      "question": "Why is genetic variation important for the long-term survival of a species?",
+      "choices": {
+        "A": "It increases mutation rate",
+        "B": "It provides the raw material for natural selection — some individuals may have traits that allow them to survive when conditions change",
+        "C": "It shortens generation time",
+        "D": "It prevents predation"
+      },
+      "answer": "B",
+      "explanation": "If all individuals are genetically identical, an environmental change (disease, climate shift) could wipe out the entire species. Variation means at least some individuals may survive and pass on adaptive alleles."
+    },
+    {
+      "id": "B76",
+      "section": "IV",
+      "topic": "Continuous vs discontinuous classify",
+      "question": "Which trait shows DISCONTINUOUS variation?",
+      "choices": {
+        "A": "Hand span",
+        "B": "Foot length",
+        "C": "Tongue rolling (yes / no)",
+        "D": "Body weight"
+      },
+      "answer": "C",
+      "explanation": "Discontinuous variation has distinct categories with no in-between values. Tongue rolling is yes/no. Hand span, foot length, and weight are all continuous (measurable on a spectrum)."
+    },
+    {
+      "id": "B77",
+      "section": "IV",
+      "topic": "Selection pressures",
+      "question": "Which of the following is NOT a typical selection pressure on a population?",
+      "choices": {
+        "A": "Predators",
+        "B": "Disease",
+        "C": "Competition for food",
+        "D": "Random genetic drift"
+      },
+      "answer": "D",
+      "explanation": "Selection pressures are environmental challenges (predators, disease, competition, climate). Genetic drift is a separate evolutionary force based on chance, not on environmental fitness."
+    },
+    {
+      "id": "B78",
+      "section": "IV",
+      "topic": "Fitness",
+      "question": "In evolutionary biology, an organism's 'fitness' is best measured by:",
+      "choices": {
+        "A": "How fast it can run",
+        "B": "How long it lives",
+        "C": "How many viable offspring it produces that survive to reproduce",
+        "D": "Its body strength"
+      },
+      "answer": "C",
+      "explanation": "Fitness = reproductive success. An organism that lives long but has no offspring contributes nothing to the next generation's gene pool. Fitness counts surviving descendants."
+    },
+    {
+      "id": "B79",
+      "section": "IV",
+      "topic": "Genetic drift in small populations",
+      "question": "Genetic drift has a stronger effect on:",
+      "choices": {
+        "A": "Very large populations",
+        "B": "Small populations",
+        "C": "Populations with high mutation rates",
+        "D": "Populations with high migration"
+      },
+      "answer": "B",
+      "explanation": "In small populations, random sampling effects (which individuals reproduce) can dramatically shift allele frequencies. In large populations, random fluctuations average out."
+    },
+    {
+      "id": "B80",
+      "section": "IV",
+      "topic": "Variation summary",
+      "question": "Which statement correctly summarizes the relationship between variation and evolution?",
+      "choices": {
+        "A": "Evolution causes variation",
+        "B": "Variation is the raw material on which natural selection acts; without variation, evolution cannot occur",
+        "C": "Variation prevents evolution",
+        "D": "Variation only matters in plants, not animals"
+      },
+      "answer": "B",
+      "explanation": "Variation must exist first (from mutations, meiosis, gene flow). Then natural selection or drift can change which alleles become more common. No variation = no evolution."
+    }
+  ]
+}
