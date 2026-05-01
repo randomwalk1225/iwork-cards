@@ -146,6 +146,20 @@
     font-size: 13px;
     margin-bottom: 16px;
   }
+  .timer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 14px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .timer-bar strong { color: var(--text); font-weight: 600; }
   .card {
     background: var(--card-bg);
     border-radius: 12px;
@@ -331,6 +345,10 @@
   </div>
 
   <div id="quiz-area" style="display:none;">
+    <div class="timer-bar" id="timer-bar">
+      <span><strong>Started:</strong> <span id="timer-start">—</span></span>
+      <span><strong>Elapsed:</strong> <span id="timer-elapsed">0:00</span></span>
+    </div>
     <div class="progress-text" id="progress-text"></div>
     <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
     <div id="card-container"></div>
@@ -352,6 +370,37 @@ let metaInfo = {};
 let categoryConfig = { label: 'Section', short: 'Sec', categories: [] };
 let presetTests = [];
 let currentSession = null;
+let timerInterval = null;
+
+function formatTime(date) {
+  const pad = (n) => String(n).padStart(2, '0');
+  return pad(date.getHours()) + ':' + pad(date.getMinutes()) + ':' + pad(date.getSeconds());
+}
+
+function formatElapsed(ms) {
+  const total = Math.floor(ms / 1000);
+  const h = Math.floor(total / 3600);
+  const m = Math.floor((total % 3600) / 60);
+  const s = total % 60;
+  const pad = (n) => String(n).padStart(2, '0');
+  return h > 0 ? (h + ':' + pad(m) + ':' + pad(s)) : (m + ':' + pad(s));
+}
+
+function startTimer() {
+  if (timerInterval) clearInterval(timerInterval);
+  document.getElementById('timer-start').textContent = formatTime(currentSession.startedAt);
+  const tick = () => {
+    if (!currentSession || currentSession.endedAt) return;
+    const elapsed = Date.now() - currentSession.startedAt.getTime();
+    document.getElementById('timer-elapsed').textContent = formatElapsed(elapsed);
+  };
+  tick();
+  timerInterval = setInterval(tick, 1000);
+}
+
+function stopTimer() {
+  if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+}
 
 async function loadQuestions() {
   const res = await fetch('questions.json');
@@ -428,6 +477,8 @@ function startPresetTest(test) {
     answers: new Array(questions.length).fill(null),
     index: 0,
     label: test.name,
+    startedAt: new Date(),
+    endedAt: null,
   };
   showQuiz();
 }
@@ -449,6 +500,8 @@ function startFreePractice() {
     answers: new Array(questions.length).fill(null),
     index: 0,
     label: 'Free Practice',
+    startedAt: new Date(),
+    endedAt: null,
   };
   showQuiz();
 }
@@ -457,6 +510,7 @@ function showQuiz() {
   document.getElementById('selector').style.display = 'none';
   document.getElementById('summary-area').style.display = 'none';
   document.getElementById('quiz-area').style.display = 'block';
+  startTimer();
   renderCard();
 }
 
@@ -587,6 +641,8 @@ function goPrev() {
 
 function showSummary() {
   const s = currentSession;
+  s.endedAt = new Date();
+  stopTimer();
   document.getElementById('quiz-area').style.display = 'none';
 
   const total = s.questions.length;
@@ -594,6 +650,7 @@ function showSummary() {
   const skipped = s.answers.filter(a => a === null || a.picked === null).length;
   const wrong = total - correctCount - skipped;
   const pct = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+  const totalElapsed = formatElapsed(s.endedAt.getTime() - s.startedAt.getTime());
 
   const stats = {};
   s.answers.forEach((a, i) => {
@@ -617,6 +674,12 @@ function showSummary() {
       '<h2>Session Complete — ' + s.label + '</h2>' +
       '<div class="score">' + correctCount + ' / ' + total + '</div>' +
       '<div class="score-detail">' + pct + '% correct · ' + wrong + ' missed · ' + skipped + ' skipped</div>' +
+      '<div class="topic-breakdown">' +
+        '<h3>Time</h3>' +
+        '<div class="topic-row"><span>Started</span><span>' + formatTime(s.startedAt) + '</span></div>' +
+        '<div class="topic-row"><span>Ended</span><span>' + formatTime(s.endedAt) + '</span></div>' +
+        '<div class="topic-row"><span>Total elapsed</span><span>' + totalElapsed + '</span></div>' +
+      '</div>' +
       breakdownHTML +
       '<div class="controls" style="justify-content:center; margin-top:24px;">' +
         '<button class="primary" onclick="location.reload()">Choose Another Test</button>' +
