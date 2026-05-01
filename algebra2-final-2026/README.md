@@ -6,11 +6,11 @@ Covers Chapters 5–8 of *Pearson Algebra II Common Core*:
 
 | Ch | Topic | # Cards |
 |----|-------|---------|
-| 5 | Polynomial Functions (classify, end behavior, factor, divide, Pascal) | 9 |
-| 6 | Radicals & Rational Exponents (nth roots, simplify, rationalize, solve, functions, inverses) | 11 |
-| 7 | Exponential & Logarithmic Functions (compounding, log form, properties, equations) | 7 |
-| 8 | Rational Functions (asymptotes, simplify, ×/÷, +/−, equations) | 5 |
-| **Total** | | **32** |
+| 5 | Polynomial Functions (classify, end behavior, factor, divide, Pascal, Rational Root) | 15 |
+| 6 | Radicals & Rational Exponents (nth roots, simplify, multiply, rationalize, solve, functions, inverses) | 24 |
+| 7 | Exponential & Logarithmic Functions (compounding, log form, properties, equations) | 14 |
+| 8 | Rational Functions (asymptotes, simplify, ×/÷, +/−, equations) | 9 |
+| **Total** | | **62** |
 
 ## How to use
 

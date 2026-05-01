@@ -8,7 +8,7 @@ Online flashcard practice decks for iWork Math & Science Academy students.
 
 | Deck | Subject | Cards | Source |
 |------|---------|-------|--------|
-| [`algebra2-final-2026/`](algebra2-final-2026/) | Honors Algebra II — Chapters 5–8 | 32 | Pearson Algebra II Common Core |
+| [`algebra2-final-2026/`](algebra2-final-2026/) | Honors Algebra II — Chapters 5–8 | 62 | Pearson Algebra II Common Core |
 | [`biology-semester2-2026/`](biology-semester2-2026/) | Honors Biology — Semester 2 (Genetics, Mutations, Variation) | 80 (≈4 sessions) | APIS Honors Biology Sem 2 Study Guide (2025–26) |
 
 ## How it works
