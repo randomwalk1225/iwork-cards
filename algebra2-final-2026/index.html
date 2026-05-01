@@ -131,14 +131,75 @@
   .progress-bar {
     background: var(--border);
     border-radius: 999px;
-    height: 8px;
-    margin-bottom: 16px;
+    height: 6px;
+    margin-bottom: 12px;
     overflow: hidden;
   }
   .progress-fill {
     background: var(--primary);
     height: 100%;
     transition: width 0.3s ease;
+  }
+  .step-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .step {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: white;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.12s ease;
+    line-height: 1;
+  }
+  .step:hover { transform: scale(1.1); border-color: var(--primary); color: var(--primary); }
+  .step.current {
+    border-color: var(--primary);
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 0 0 3px var(--primary-light);
+  }
+  .step.correct {
+    border-color: var(--correct);
+    background: var(--correct-light);
+    color: var(--correct);
+  }
+  .step.correct.current {
+    background: var(--correct);
+    color: white;
+    box-shadow: 0 0 0 3px var(--correct-light);
+  }
+  .step.incorrect {
+    border-color: var(--incorrect);
+    background: var(--incorrect-light);
+    color: var(--incorrect);
+  }
+  .step.incorrect.current {
+    background: var(--incorrect);
+    color: white;
+    box-shadow: 0 0 0 3px var(--incorrect-light);
+  }
+  .step.skipped {
+    background: #f0f0f0;
+    color: var(--muted);
+    border-color: #ddd;
+  }
+  .step.skipped.current {
+    background: var(--muted);
+    color: white;
   }
   .progress-text {
     text-align: center;
@@ -351,6 +412,7 @@
     </div>
     <div class="progress-text" id="progress-text"></div>
     <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    <div class="step-nav" id="step-nav"></div>
     <div id="card-container"></div>
   </div>
 
@@ -514,6 +576,31 @@ function showQuiz() {
   renderCard();
 }
 
+function renderStepNav() {
+  const s = currentSession;
+  const nav = document.getElementById('step-nav');
+  nav.innerHTML = '';
+  s.questions.forEach((q, i) => {
+    const ans = s.answers[i];
+    const btn = document.createElement('button');
+    btn.className = 'step';
+    btn.type = 'button';
+    btn.textContent = (i + 1);
+    btn.title = 'Card ' + (i + 1) + ' (' + q.id + ')';
+    if (i === s.index) btn.classList.add('current');
+    if (ans) {
+      if (ans.picked === null) btn.classList.add('skipped');
+      else if (ans.correct) btn.classList.add('correct');
+      else btn.classList.add('incorrect');
+    }
+    btn.addEventListener('click', () => {
+      s.index = i;
+      renderCard();
+    });
+    nav.appendChild(btn);
+  });
+}
+
 function renderCard() {
   const s = currentSession;
   const q = s.questions[s.index];
@@ -525,6 +612,7 @@ function renderCard() {
     s.label + ' · Card ' + (s.index + 1) + ' of ' + total;
   document.getElementById('progress-fill').style.width =
     (((s.index + 1) / total) * 100) + '%';
+  renderStepNav();
 
   const container = document.getElementById('card-container');
   container.innerHTML =
@@ -682,7 +770,7 @@ function showSummary() {
       '</div>' +
       breakdownHTML +
       '<div class="controls" style="justify-content:center; margin-top:24px;">' +
-        '<button class="primary" onclick="location.reload()">Choose Another Test</button>' +
+        '<button class="primary" onclick="location.reload()">🏠 Home — Test Selection</button>' +
       '</div>' +
     '</div>';
   summary.style.display = 'block';
