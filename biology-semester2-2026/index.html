@@ -98,7 +98,7 @@
   main {
     max-width: 760px;
     margin: 0 auto;
-    padding: 32px 24px 64px;
+    padding: 32px 24px 120px;
   }
 
   /* ────── Selector / Start Screen ────── */
@@ -424,6 +424,32 @@
     flex-wrap: wrap;
   }
   .controls-row { display: flex; gap: 8px; }
+
+  .fixed-controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border);
+    z-index: 50;
+    box-shadow: 0 -4px 12px rgba(50, 50, 93, 0.06);
+  }
+  .fixed-controls .inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: center;
+  }
+  .fixed-controls .controls-row { display: flex; gap: 8px; }
+  @supports not (backdrop-filter: blur(12px)) {
+    .fixed-controls { background: #ffffff; }
+  }
   button {
     border: none;
     border-radius: 4px;
@@ -568,6 +594,16 @@
 
   <div id="summary-area" style="display:none;"></div>
 </main>
+
+<div id="fixed-controls" class="fixed-controls" style="display:none;">
+  <div class="inner">
+    <button class="tertiary" type="button" id="prev-btn">← Prev</button>
+    <div class="controls-row">
+      <button class="secondary" type="button" id="skip-btn">Skip</button>
+      <button class="primary" type="button" id="next-btn">Next →</button>
+    </div>
+  </div>
+</div>
 
 <footer>
   iWork Math &amp; Science Academy · 원장 이상열
@@ -722,6 +758,11 @@ function showQuiz() {
   document.getElementById('selector').style.display = 'none';
   document.getElementById('summary-area').style.display = 'none';
   document.getElementById('quiz-area').style.display = 'block';
+  document.getElementById('fixed-controls').style.display = 'block';
+  // Wire fixed-bar buttons (do this once they're visible)
+  document.getElementById('prev-btn').onclick = goPrev;
+  document.getElementById('skip-btn').onclick = skipCard;
+  document.getElementById('next-btn').onclick = goNext;
   startTimer();
   renderCard();
 }
@@ -774,14 +815,13 @@ function renderCard() {
       '<div class="question-text">' + q.question + '</div>' +
       '<div class="choices" id="choices-list"></div>' +
       '<div id="feedback-area"></div>' +
-      '<div class="controls">' +
-        '<button class="tertiary" id="prev-btn"' + (s.index === 0 ? ' disabled' : '') + '>← Prev</button>' +
-        '<div class="controls-row">' +
-          '<button class="secondary" id="skip-btn">Skip</button>' +
-          '<button class="primary" id="next-btn">' + (s.index + 1 === total ? 'Finish' : 'Next →') + '</button>' +
-        '</div>' +
-      '</div>' +
     '</div>';
+
+  // Update fixed bottom controls (Prev/Skip/Next)
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  prevBtn.disabled = (s.index === 0);
+  nextBtn.textContent = (s.index + 1 === total ? 'Finish' : 'Next →');
 
   const choicesList = document.getElementById('choices-list');
   for (const letter of ['A', 'B', 'C', 'D']) {
@@ -813,10 +853,6 @@ function renderCard() {
         '<div>' + q.explanation + '</div>' +
       '</div>';
   }
-
-  document.getElementById('prev-btn').addEventListener('click', () => goPrev());
-  document.getElementById('skip-btn').addEventListener('click', () => skipCard());
-  document.getElementById('next-btn').addEventListener('click', () => goNext());
 
   if (window.MathJax && MathJax.typesetPromise) {
     MathJax.typesetPromise([container]).catch(err => console.warn(err));
@@ -883,6 +919,7 @@ function showSummary() {
   s.endedAt = new Date();
   stopTimer();
   document.getElementById('quiz-area').style.display = 'none';
+  document.getElementById('fixed-controls').style.display = 'none';
 
   const total = s.questions.length;
   const correctCount = s.answers.filter(a => a && a.correct).length;
