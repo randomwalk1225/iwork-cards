@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Practice Cards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <script>
   MathJax = {
@@ -18,121 +21,205 @@
 
 <style>
   :root {
-    --bg: #f7f8fa;
-    --card-bg: #ffffff;
-    --text: #1a1a1a;
-    --muted: #5f6368;
-    --primary: #1565c0;
-    --primary-light: #e3f2fd;
-    --primary-dark: #0d47a1;
-    --correct: #2e7d32;
-    --correct-light: #e8f5e9;
-    --incorrect: #c62828;
-    --incorrect-light: #ffebee;
-    --border: #e0e0e0;
-    --shadow: 0 2px 8px rgba(0,0,0,0.08);
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --heading: #061b31;
+    --body: #64748d;
+    --label: #273951;
+    --primary: #533afd;
+    --primary-hover: #4434d4;
+    --primary-soft: rgba(83, 58, 253, 0.05);
+    --primary-light: #b9b9f9;
+    --border: #e5edf5;
+    --border-soft-purple: #d6d9fc;
+    --brand-dark: #1c1e54;
+    --success: #15be53;
+    --success-text: #108c3d;
+    --success-bg: rgba(21, 190, 83, 0.12);
+    --success-border: rgba(21, 190, 83, 0.4);
+    --ruby: #ea2261;
+    --ruby-bg: rgba(234, 34, 97, 0.08);
+    --ruby-border: rgba(234, 34, 97, 0.3);
+    --shadow-ambient: rgba(23, 23, 23, 0.06) 0px 3px 6px;
+    --shadow-standard: rgba(23, 23, 23, 0.08) 0px 15px 35px 0px;
+    --shadow-elevated: rgba(50, 50, 93, 0.25) 0px 30px 45px -30px, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px;
   }
   * { box-sizing: border-box; }
+  html { font-feature-settings: "ss01"; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 300;
+    color: var(--heading);
     background: var(--bg);
-    color: var(--text);
     margin: 0;
-    padding: 0;
-    line-height: 1.6;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
   }
+
   header {
-    background: var(--primary);
-    color: white;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
     padding: 14px 24px;
-    box-shadow: var(--shadow);
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
   }
   header .home-link {
-    color: white;
+    color: var(--primary);
     text-decoration: none;
-    background: rgba(255,255,255,0.18);
+    background: transparent;
+    border: 1px solid var(--primary-light);
     padding: 6px 12px;
-    border-radius: 6px;
+    border-radius: 4px;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 400;
     transition: background 0.15s ease;
     flex-shrink: 0;
   }
-  header .home-link:hover { background: rgba(255,255,255,0.32); }
-  header .title-block h1 { margin: 0; font-size: 17px; font-weight: 600; }
-  header .title-block .meta { font-size: 12px; opacity: 0.9; margin-top: 2px; }
+  header .home-link:hover { background: var(--primary-soft); }
+  header .title-block h1 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--heading);
+    letter-spacing: -0.1px;
+  }
+  header .title-block .meta {
+    font-size: 12px;
+    color: var(--body);
+    margin-top: 2px;
+  }
+
   main {
     max-width: 760px;
-    margin: 24px auto;
-    padding: 0 16px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
   }
+
+  /* ────── Selector / Start Screen ────── */
   .selector h2 {
-    font-size: 13px;
-    color: var(--muted);
+    font-size: 12px;
+    color: var(--label);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin: 18px 4px 10px;
+    font-weight: 500;
+    margin: 24px 0 12px;
   }
-  .test-grid {
-    display: grid;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
+  .test-grid { display: grid; gap: 12px; margin-bottom: 32px; }
   .test-btn {
     text-align: left;
-    background: var(--card-bg);
-    border: 2px solid var(--border);
-    border-left: 5px solid var(--primary);
-    border-radius: 10px;
-    padding: 16px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 24px;
     cursor: pointer;
-    transition: all 0.15s ease;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
     font-family: inherit;
-    color: var(--text);
+    color: var(--heading);
+    box-shadow: var(--shadow-ambient);
+    width: 100%;
   }
   .test-btn:hover {
-    border-color: var(--primary);
-    background: var(--primary-light);
-    transform: translateY(-1px);
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-2px);
+    border-color: var(--border-soft-purple);
+  }
+  .test-btn .eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
   }
   .test-btn h3 {
-    margin: 0 0 4px;
-    font-size: 16px;
-    color: var(--primary);
-    font-weight: 600;
+    margin: 0 0 6px;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--heading);
+    letter-spacing: -0.2px;
+    line-height: 1.15;
   }
-  .test-btn p { margin: 0; font-size: 13px; color: var(--muted); }
+  .test-btn p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--body);
+  }
   .free-practice {
-    background: var(--card-bg);
-    border: 2px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 24px;
     margin-bottom: 16px;
+    box-shadow: var(--shadow-ambient);
   }
-  .free-practice h3 { margin: 0 0 12px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .free-practice h3 {
+    margin: 0 0 14px;
+    font-size: 12px;
+    color: var(--label);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
   .free-practice .row {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     align-items: center;
   }
-  .free-practice label { font-size: 13px; color: var(--muted); }
-  .free-practice select, .free-practice input[type="number"] {
+  .free-practice label {
+    font-size: 13px;
+    color: var(--label);
+    font-weight: 400;
+  }
+  .free-practice select,
+  .free-practice input[type="number"] {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 7px 10px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--heading);
+    background: white;
+  }
+  .free-practice select:focus,
+  .free-practice input[type="number"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-soft);
+  }
+
+  /* ────── Quiz / Card View ────── */
+  .timer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 6px;
-    padding: 6px 9px;
+    padding: 9px 16px;
+    margin-bottom: 12px;
     font-size: 13px;
-    font-family: inherit;
+    color: var(--body);
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+  }
+  .timer-bar strong {
+    color: var(--heading);
+    font-weight: 500;
   }
 
   .progress-bar {
     background: var(--border);
     border-radius: 999px;
-    height: 6px;
-    margin-bottom: 12px;
+    height: 4px;
+    margin-bottom: 14px;
     overflow: hidden;
   }
   .progress-fill {
@@ -140,22 +227,30 @@
     height: 100%;
     transition: width 0.3s ease;
   }
+  .progress-text {
+    text-align: center;
+    color: var(--body);
+    font-size: 13px;
+    margin-bottom: 14px;
+    font-weight: 400;
+  }
+
   .step-nav {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
     justify-content: center;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
   .step {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 2px solid var(--border);
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
     background: white;
-    color: var(--muted);
-    font-size: 13px;
-    font-weight: 600;
+    color: var(--body);
+    font-size: 12px;
+    font-weight: 500;
     font-family: inherit;
     cursor: pointer;
     display: inline-flex;
@@ -164,214 +259,269 @@
     padding: 0;
     transition: all 0.12s ease;
     line-height: 1;
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
   }
-  .step:hover { transform: scale(1.1); border-color: var(--primary); color: var(--primary); }
+  .step:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
   .step.current {
     border-color: var(--primary);
     background: var(--primary);
     color: white;
-    box-shadow: 0 0 0 3px var(--primary-light);
   }
   .step.correct {
-    border-color: var(--correct);
-    background: var(--correct-light);
-    color: var(--correct);
+    border-color: var(--success-border);
+    background: var(--success-bg);
+    color: var(--success-text);
   }
   .step.correct.current {
-    background: var(--correct);
+    background: var(--success);
     color: white;
-    box-shadow: 0 0 0 3px var(--correct-light);
+    border-color: var(--success);
   }
   .step.incorrect {
-    border-color: var(--incorrect);
-    background: var(--incorrect-light);
-    color: var(--incorrect);
+    border-color: var(--ruby-border);
+    background: var(--ruby-bg);
+    color: var(--ruby);
   }
   .step.incorrect.current {
-    background: var(--incorrect);
+    background: var(--ruby);
     color: white;
-    box-shadow: 0 0 0 3px var(--incorrect-light);
+    border-color: var(--ruby);
   }
   .step.skipped {
-    background: #f0f0f0;
-    color: var(--muted);
-    border-color: #ddd;
+    background: #f4f5f7;
+    color: var(--body);
   }
   .step.skipped.current {
-    background: var(--muted);
+    background: var(--label);
     color: white;
+    border-color: var(--label);
   }
-  .progress-text {
-    text-align: center;
-    color: var(--muted);
-    font-size: 13px;
-    margin-bottom: 16px;
-  }
-  .timer-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--card-bg);
+
+  .card {
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 8px 14px;
-    margin-bottom: 12px;
-    font-size: 13px;
-    color: var(--muted);
-    font-variant-numeric: tabular-nums;
-  }
-  .timer-bar strong { color: var(--text); font-weight: 600; }
-  .card {
-    background: var(--card-bg);
-    border-radius: 12px;
-    padding: 28px;
-    box-shadow: var(--shadow);
+    padding: 32px;
+    box-shadow: var(--shadow-elevated);
     margin-bottom: 16px;
   }
   .card-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 14px;
+    font-size: 11px;
+    color: var(--body);
+    margin-bottom: 18px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-weight: 500;
   }
   .chip {
-    background: var(--primary-light);
+    background: var(--primary-soft);
     color: var(--primary);
     padding: 3px 10px;
-    border-radius: 999px;
-    font-weight: 600;
+    border-radius: 4px;
+    border: 1px solid var(--border-soft-purple);
+    font-weight: 500;
+  }
+  .card-meta .qid {
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+    color: var(--body);
+    font-weight: 400;
   }
   .question-text {
     font-size: 17px;
-    margin-bottom: 22px;
-    line-height: 1.7;
+    font-weight: 300;
+    color: var(--heading);
+    margin-bottom: 24px;
+    line-height: 1.55;
   }
-  .choices { display: grid; gap: 10px; }
+  .choices { display: grid; gap: 8px; }
   .choice {
-    background: #fafbfc;
-    border: 2px solid var(--border);
-    border-radius: 8px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
     padding: 14px 16px;
     cursor: pointer;
-    transition: all 0.15s ease;
+    transition: border-color 0.12s ease, background 0.12s ease;
     display: flex;
     gap: 12px;
     align-items: flex-start;
     font-size: 15px;
+    font-weight: 300;
+    color: var(--heading);
   }
   .choice:hover:not(.disabled) {
     border-color: var(--primary);
-    background: var(--primary-light);
+    background: var(--primary-soft);
   }
   .choice .letter {
-    font-weight: 700;
+    font-weight: 500;
     color: var(--primary);
     min-width: 22px;
+    font-feature-settings: "tnum";
   }
   .choice .text { flex: 1; }
   .choice.disabled { cursor: default; }
   .choice.correct {
-    background: var(--correct-light);
-    border-color: var(--correct);
+    background: var(--success-bg);
+    border-color: var(--success-border);
   }
-  .choice.correct .letter { color: var(--correct); }
+  .choice.correct .letter { color: var(--success-text); }
   .choice.incorrect {
-    background: var(--incorrect-light);
-    border-color: var(--incorrect);
+    background: var(--ruby-bg);
+    border-color: var(--ruby-border);
   }
-  .choice.incorrect .letter { color: var(--incorrect); }
+  .choice.incorrect .letter { color: var(--ruby); }
+
   .feedback {
     margin-top: 18px;
     padding: 14px 16px;
-    border-radius: 8px;
-    background: var(--primary-light);
-    border-left: 4px solid var(--primary);
-    font-size: 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--heading);
+    border: 1px solid var(--border);
+    background: var(--primary-soft);
+    border-left: 3px solid var(--primary);
   }
-  .feedback.correct { background: var(--correct-light); border-left-color: var(--correct); }
-  .feedback.incorrect { background: var(--incorrect-light); border-left-color: var(--incorrect); }
-  .feedback.skipped { background: #f5f5f5; border-left-color: var(--muted); }
-  .feedback .label { font-weight: 700; margin-bottom: 6px; display: block; }
+  .feedback.correct {
+    background: var(--success-bg);
+    border-color: var(--success-border);
+    border-left-color: var(--success);
+  }
+  .feedback.incorrect {
+    background: var(--ruby-bg);
+    border-color: var(--ruby-border);
+    border-left-color: var(--ruby);
+  }
+  .feedback.skipped {
+    background: #f4f5f7;
+    border-left-color: var(--body);
+  }
+  .feedback .label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .feedback.correct .label { color: var(--success-text); }
+  .feedback.incorrect .label { color: var(--ruby); }
+  .feedback.skipped .label { color: var(--body); }
 
   .controls {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
-    margin-top: 20px;
+    gap: 8px;
+    margin-top: 24px;
     flex-wrap: wrap;
   }
   .controls-row { display: flex; gap: 8px; }
   button {
     border: none;
-    border-radius: 8px;
-    padding: 10px 18px;
+    border-radius: 4px;
+    padding: 8px 16px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 400;
     cursor: pointer;
-    transition: all 0.15s ease;
+    transition: background 0.12s ease, border-color 0.12s ease;
     font-family: inherit;
+    line-height: 1;
   }
-  button.primary { background: var(--primary); color: white; }
-  button.primary:hover:not(:disabled) { background: var(--primary-dark); }
+  button.primary {
+    background: var(--primary);
+    color: white;
+  }
+  button.primary:hover:not(:disabled) { background: var(--primary-hover); }
   button.secondary {
     background: white;
     color: var(--primary);
-    border: 2px solid var(--primary);
+    border: 1px solid var(--primary-light);
   }
-  button.secondary:hover:not(:disabled) { background: var(--primary-light); }
+  button.secondary:hover:not(:disabled) { background: var(--primary-soft); }
   button.tertiary {
-    background: white;
-    color: var(--muted);
-    border: 2px solid var(--border);
+    background: transparent;
+    color: var(--body);
+    border: 1px solid var(--border);
   }
-  button.tertiary:hover:not(:disabled) { border-color: var(--muted); color: var(--text); }
+  button.tertiary:hover:not(:disabled) {
+    border-color: var(--label);
+    color: var(--heading);
+  }
   button:disabled { opacity: 0.4; cursor: not-allowed; }
 
+  /* ────── Summary ────── */
   .summary {
-    background: var(--card-bg);
-    border-radius: 12px;
-    padding: 32px;
-    box-shadow: var(--shadow);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: var(--shadow-elevated);
     text-align: center;
   }
-  .summary h2 { margin: 0 0 12px; color: var(--primary); }
+  .summary h2 {
+    margin: 0 0 16px;
+    color: var(--heading);
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: -0.24px;
+  }
   .score {
-    font-size: 48px;
-    font-weight: 700;
+    font-size: 56px;
+    font-weight: 300;
     color: var(--primary);
     margin: 16px 0;
+    letter-spacing: -1.4px;
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
   }
-  .score-detail { color: var(--muted); font-size: 14px; }
+  .score-detail {
+    color: var(--body);
+    font-size: 14px;
+    font-weight: 300;
+  }
   .topic-breakdown {
     text-align: left;
-    margin-top: 24px;
-    padding-top: 20px;
+    margin-top: 28px;
+    padding-top: 24px;
     border-top: 1px solid var(--border);
   }
   .topic-breakdown h3 {
-    font-size: 13px;
-    color: var(--muted);
+    font-size: 12px;
+    color: var(--label);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-weight: 500;
     margin: 0 0 12px;
   }
   .topic-row {
     display: flex;
     justify-content: space-between;
-    padding: 6px 0;
+    padding: 7px 0;
     font-size: 14px;
-    border-bottom: 1px dashed var(--border);
+    font-weight: 300;
+    color: var(--heading);
+    border-bottom: 1px solid var(--border);
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
   }
+  .topic-row:last-child { border-bottom: none; }
+
   footer {
+    color: var(--body);
+    font-size: 13px;
+    font-weight: 300;
     text-align: center;
-    color: var(--muted);
-    font-size: 12px;
-    padding: 16px;
-    margin-top: 24px;
+    padding: 32px 16px 48px;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
   }
 </style>
 </head>
@@ -394,9 +544,9 @@
     <div class="free-practice">
       <h3>Customize your session</h3>
       <div class="row">
-        <label for="num-questions">Number of cards:</label>
+        <label for="num-questions">Number of cards</label>
         <input type="number" id="num-questions" min="5" max="100" value="15">
-        <label for="filter-section" id="filter-label">Section:</label>
+        <label for="filter-section" id="filter-label">Section</label>
         <select id="filter-section">
           <option value="all">All</option>
         </select>
@@ -407,8 +557,8 @@
 
   <div id="quiz-area" style="display:none;">
     <div class="timer-bar" id="timer-bar">
-      <span><strong>Started:</strong> <span id="timer-start">—</span></span>
-      <span><strong>Elapsed:</strong> <span id="timer-elapsed">0:00</span></span>
+      <span><strong>Started</strong> <span id="timer-start">—</span></span>
+      <span><strong>Elapsed</strong> <span id="timer-elapsed">0:00</span></span>
     </div>
     <div class="progress-text" id="progress-text"></div>
     <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
@@ -420,7 +570,7 @@
 </main>
 
 <footer>
-  iWork Math &amp; Science Academy — 원장 이상열
+  iWork Math &amp; Science Academy · 원장 이상열
 </footer>
 
 <script>
@@ -474,20 +624,18 @@ async function loadQuestions() {
 
   document.getElementById('page-title').textContent = data.title;
   document.title = data.title;
-  const metaParts = [data.subject, data.exam_date ? 'Exam: ' + data.exam_date : null, 'Instructor: ' + data.instructor];
+  const metaParts = [data.subject, data.exam_date ? 'Exam ' + data.exam_date : null, 'Instructor ' + data.instructor];
   document.getElementById('page-meta').textContent = metaParts.filter(Boolean).join(' · ');
 
   if (data.ui) {
     if (data.ui.category_label) categoryConfig.label = data.ui.category_label;
     if (data.ui.category_short) categoryConfig.short = data.ui.category_short;
     if (Array.isArray(data.ui.categories)) categoryConfig.categories = data.ui.categories;
-    if (data.ui.theme_color) document.documentElement.style.setProperty('--primary', data.ui.theme_color);
-    if (data.ui.theme_light) document.documentElement.style.setProperty('--primary-light', data.ui.theme_light);
   }
 
   renderTestGrid();
 
-  document.getElementById('filter-label').textContent = categoryConfig.label + ':';
+  document.getElementById('filter-label').textContent = categoryConfig.label;
   const sel = document.getElementById('filter-section');
   for (const cat of categoryConfig.categories) {
     const opt = document.createElement('option');
@@ -501,18 +649,20 @@ function renderTestGrid() {
   const grid = document.getElementById('test-grid');
   grid.innerHTML = '';
   if (presetTests.length === 0) {
-    grid.innerHTML = '<p style="color:var(--muted); font-size:13px; padding:8px;">(No preset tests configured.)</p>';
+    grid.innerHTML = '<p style="color:var(--body); font-size:13px;">(No preset tests configured.)</p>';
     return;
   }
-  for (const t of presetTests) {
+  presetTests.forEach((t, i) => {
     const btn = document.createElement('button');
     btn.className = 'test-btn';
+    btn.type = 'button';
     btn.innerHTML =
+      '<div class="eyebrow">Test 0' + (i + 1) + '</div>' +
       '<h3>' + t.name + '</h3>' +
       '<p>' + (t.description || (t.question_ids.length + ' questions')) + '</p>';
     btn.addEventListener('click', () => startPresetTest(t));
     grid.appendChild(btn);
-  }
+  });
 }
 
 function shuffle(arr) {
@@ -619,7 +769,7 @@ function renderCard() {
     '<div class="card">' +
       '<div class="card-meta">' +
         '<span class="chip">' + categoryConfig.short + ' ' + cat + ' · ' + q.topic + '</span>' +
-        '<span>' + q.id + '</span>' +
+        '<span class="qid">' + q.id + '</span>' +
       '</div>' +
       '<div class="question-text">' + q.question + '</div>' +
       '<div class="choices" id="choices-list"></div>' +
@@ -652,14 +802,14 @@ function renderCard() {
 
   if (existing) {
     const fb = document.getElementById('feedback-area');
-    let cls = 'skipped', label = '○ Skipped';
+    let cls = 'skipped', label = 'Skipped';
     if (existing.picked) {
       cls = existing.correct ? 'correct' : 'incorrect';
-      label = existing.correct ? '✓ Correct' : '✗ Incorrect';
+      label = existing.correct ? 'Correct' : 'Incorrect';
     }
     fb.innerHTML =
       '<div class="feedback ' + cls + '">' +
-        '<span class="label">' + label + ' — Answer: ' + q.answer + '</span>' +
+        '<span class="label">' + label + ' · Answer ' + q.answer + '</span>' +
         '<div>' + q.explanation + '</div>' +
       '</div>';
   }
@@ -692,13 +842,14 @@ function pickAnswer(letter) {
   const fb = document.getElementById('feedback-area');
   fb.innerHTML =
     '<div class="feedback ' + (correct ? 'correct' : 'incorrect') + '">' +
-      '<span class="label">' + (correct ? '✓ Correct' : '✗ Incorrect') + ' — Answer: ' + q.answer + '</span>' +
+      '<span class="label">' + (correct ? 'Correct' : 'Incorrect') + ' · Answer ' + q.answer + '</span>' +
       '<div>' + q.explanation + '</div>' +
     '</div>';
 
   if (window.MathJax && MathJax.typesetPromise) {
     MathJax.typesetPromise([fb]).catch(err => console.warn(err));
   }
+  renderStepNav();
 }
 
 function skipCard() {
@@ -759,7 +910,7 @@ function showSummary() {
   const summary = document.getElementById('summary-area');
   summary.innerHTML =
     '<div class="summary">' +
-      '<h2>Session Complete — ' + s.label + '</h2>' +
+      '<h2>Session Complete · ' + s.label + '</h2>' +
       '<div class="score">' + correctCount + ' / ' + total + '</div>' +
       '<div class="score-detail">' + pct + '% correct · ' + wrong + ' missed · ' + skipped + ' skipped</div>' +
       '<div class="topic-breakdown">' +
@@ -769,8 +920,8 @@ function showSummary() {
         '<div class="topic-row"><span>Total elapsed</span><span>' + totalElapsed + '</span></div>' +
       '</div>' +
       breakdownHTML +
-      '<div class="controls" style="justify-content:center; margin-top:24px;">' +
-        '<button class="primary" onclick="location.reload()">🏠 Home — Test Selection</button>' +
+      '<div class="controls" style="justify-content:center; margin-top:28px;">' +
+        '<button class="primary" onclick="location.reload()">Home — Test Selection</button>' +
       '</div>' +
     '</div>';
   summary.style.display = 'block';

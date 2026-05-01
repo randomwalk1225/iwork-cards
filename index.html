@@ -4,72 +4,163 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>iWork Practice Cards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --bg: #ffffff;
+    --heading: #061b31;
+    --body: #64748d;
+    --label: #273951;
+    --primary: #533afd;
+    --primary-hover: #4434d4;
+    --primary-soft: rgba(83, 58, 253, 0.05);
+    --primary-light: #b9b9f9;
+    --border: #e5edf5;
+    --brand-dark: #1c1e54;
+    --shadow-ambient: rgba(23, 23, 23, 0.08) 0px 15px 35px 0px;
+    --shadow-elevated: rgba(50, 50, 93, 0.25) 0px 30px 45px -30px, rgba(0, 0, 0, 0.1) 0px 18px 36px -18px;
+  }
+  * { box-sizing: border-box; }
+  html { font-feature-settings: "ss01"; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: #f7f8fa;
-    color: #1a1a1a;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 300;
+    color: var(--heading);
+    background: var(--bg);
     margin: 0;
-    padding: 40px 16px;
-    line-height: 1.6;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
   }
-  main { max-width: 720px; margin: 0 auto; }
-  h1 { color: #1565c0; margin-bottom: 4px; }
-  .subtitle { color: #5f6368; margin-bottom: 36px; }
-  .card-link {
-    display: block;
-    background: white;
-    border-radius: 12px;
-    padding: 24px 28px;
-    margin-bottom: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    text-decoration: none;
-    color: #1a1a1a;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-    border-left: 5px solid var(--accent, #1565c0);
+  header {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
   }
-  .card-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  header h1 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--heading);
+    letter-spacing: -0.1px;
   }
-  .card-link h2 {
-    margin: 0 0 6px;
+  main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 80px 24px 64px;
+  }
+  .hero {
+    margin-bottom: 56px;
+  }
+  .hero h2 {
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.96px;
+    color: var(--heading);
+    margin: 0 0 20px;
+  }
+  .hero p {
     font-size: 18px;
+    font-weight: 300;
+    color: var(--body);
+    line-height: 1.5;
+    max-width: 560px;
+    margin: 0;
   }
-  .card-link .meta {
-    font-size: 13px;
-    color: #5f6368;
-  }
-  .card-link.math { --accent: #1565c0; }
-  .card-link.bio { --accent: #2e7d32; }
-  .card-link.bio h2 { color: #2e7d32; }
-  .card-link.math h2 { color: #1565c0; }
-  footer {
-    text-align: center;
-    color: #9aa0a6;
+  .section-label {
     font-size: 12px;
+    font-weight: 500;
+    color: var(--label);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+  .deck-grid {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 56px;
+  }
+  .deck-card {
+    display: block;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 32px;
+    text-decoration: none;
+    color: var(--heading);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    box-shadow: var(--shadow-ambient);
+  }
+  .deck-card:hover {
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-2px);
+  }
+  .deck-card .deck-eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .deck-card h3 {
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--heading);
+    letter-spacing: -0.22px;
+    line-height: 1.15;
+    margin: 0 0 8px;
+  }
+  .deck-card p {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--body);
+    margin: 0;
+  }
+  footer {
+    color: var(--body);
+    font-size: 13px;
+    font-weight: 300;
+    text-align: center;
+    padding: 32px 16px 48px;
+    border-top: 1px solid var(--border);
     margin-top: 48px;
   }
 </style>
 </head>
 <body>
-<main>
+<header>
   <h1>iWork Practice Cards</h1>
-  <div class="subtitle">Online flashcard practice — pick a deck to begin.</div>
+</header>
+<main>
+  <section class="hero">
+    <h2>Practice cards for honors-level review.</h2>
+    <p>Pick a deck and run a timed session. Each preset test draws from a curated bank with step-by-step navigation, instant feedback, and a session score.</p>
+  </section>
 
-  <a class="card-link math" href="algebra2-final-2026/">
-    <h2>Honors Algebra II — Final Exam Practice</h2>
-    <div class="meta">Chapters 5–8 · 62 cards · Pearson Algebra II Common Core</div>
-  </a>
-
-  <a class="card-link bio" href="biology-semester2-2026/">
-    <h2>Honors Biology — Semester 2 Final Practice</h2>
-    <div class="meta">Sections I–IV · 80 cards · APIS Honors Biology Sem 2 Study Guide</div>
-  </a>
-
-  <footer>
-    iWork Math &amp; Science Academy · 원장 이상열
-  </footer>
+  <div class="section-label">Decks</div>
+  <div class="deck-grid">
+    <a class="deck-card" href="algebra2-final-2026/">
+      <div class="deck-eyebrow">Mathematics</div>
+      <h3>Honors Algebra II — Final Exam Practice</h3>
+      <p>Chapters 5–8 · 62 cards · Pearson Algebra II Common Core</p>
+    </a>
+    <a class="deck-card" href="biology-semester2-2026/">
+      <div class="deck-eyebrow">Science</div>
+      <h3>Honors Biology — Semester 2 Final Practice</h3>
+      <p>Sections I–IV · 80 cards · APIS Honors Biology Sem 2 Study Guide</p>
+    </a>
+  </div>
 </main>
+<footer>
+  iWork Math &amp; Science Academy · 원장 이상열
+</footer>
 </body>
 </html>
