@@ -4,6 +4,113 @@
   "exam_date": "2026-05-11",
   "instructor": "원장 이상열",
   "source": "Pearson Algebra II Common Core, Final Exam Review (Keisha Bertiz, APIS)",
+  "ui": {
+    "category_label": "Chapter",
+    "category_short": "Ch",
+    "theme_color": "#1565c0",
+    "theme_light": "#e3f2fd",
+    "categories": [
+      {
+        "id": "5",
+        "label": "Ch 5 — Polynomial Functions"
+      },
+      {
+        "id": "6",
+        "label": "Ch 6 — Radicals & Rational Exponents"
+      },
+      {
+        "id": "7",
+        "label": "Ch 7 — Exponential & Logarithmic"
+      },
+      {
+        "id": "8",
+        "label": "Ch 8 — Rational Functions"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "id": "test1",
+      "name": "Practice Test 1",
+      "description": "20 questions across all chapters (5–8)",
+      "question_ids": [
+        "Q01",
+        "Q04",
+        "Q06",
+        "Q08",
+        "Q33",
+        "Q10",
+        "Q12",
+        "Q14",
+        "Q16",
+        "Q18",
+        "Q39",
+        "Q43",
+        "Q46",
+        "Q21",
+        "Q23",
+        "Q52",
+        "Q55",
+        "Q28",
+        "Q31",
+        "Q60"
+      ]
+    },
+    {
+      "id": "test2",
+      "name": "Practice Test 2",
+      "description": "20 questions across all chapters (5–8)",
+      "question_ids": [
+        "Q02",
+        "Q05",
+        "Q07",
+        "Q34",
+        "Q37",
+        "Q11",
+        "Q13",
+        "Q17",
+        "Q19",
+        "Q40",
+        "Q44",
+        "Q47",
+        "Q49",
+        "Q22",
+        "Q24",
+        "Q53",
+        "Q56",
+        "Q29",
+        "Q32",
+        "Q61"
+      ]
+    },
+    {
+      "id": "test3",
+      "name": "Practice Test 3",
+      "description": "20 questions across all chapters (5–8)",
+      "question_ids": [
+        "Q03",
+        "Q09",
+        "Q35",
+        "Q36",
+        "Q38",
+        "Q15",
+        "Q20",
+        "Q41",
+        "Q42",
+        "Q45",
+        "Q48",
+        "Q50",
+        "Q51",
+        "Q26",
+        "Q27",
+        "Q54",
+        "Q58",
+        "Q30",
+        "Q59",
+        "Q62"
+      ]
+    }
+  ],
   "questions": [
     {
       "id": "Q01",

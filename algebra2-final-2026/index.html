@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Honors Algebra II — Final Exam Practice Cards</title>
+<title>Practice Cards</title>
 
 <script>
   MathJax = {
@@ -24,6 +24,7 @@
     --muted: #5f6368;
     --primary: #1565c0;
     --primary-light: #e3f2fd;
+    --primary-dark: #0d47a1;
     --correct: #2e7d32;
     --correct-light: #e8f5e9;
     --incorrect: #c62828;
@@ -31,9 +32,7 @@
     --border: #e0e0e0;
     --shadow: 0 2px 8px rgba(0,0,0,0.08);
   }
-
   * { box-sizing: border-box; }
-
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background: var(--bg);
@@ -42,20 +41,91 @@
     padding: 0;
     line-height: 1.6;
   }
-
   header {
     background: var(--primary);
     color: white;
-    padding: 18px 24px;
+    padding: 14px 24px;
     box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 14px;
   }
-  header h1 { margin: 0; font-size: 18px; font-weight: 600; }
-  header .meta { font-size: 13px; opacity: 0.9; margin-top: 4px; }
-
+  header .home-link {
+    color: white;
+    text-decoration: none;
+    background: rgba(255,255,255,0.18);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.15s ease;
+    flex-shrink: 0;
+  }
+  header .home-link:hover { background: rgba(255,255,255,0.32); }
+  header .title-block h1 { margin: 0; font-size: 17px; font-weight: 600; }
+  header .title-block .meta { font-size: 12px; opacity: 0.9; margin-top: 2px; }
   main {
     max-width: 760px;
     margin: 24px auto;
     padding: 0 16px;
+  }
+  .selector h2 {
+    font-size: 13px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 18px 4px 10px;
+  }
+  .test-grid {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .test-btn {
+    text-align: left;
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    border-left: 5px solid var(--primary);
+    border-radius: 10px;
+    padding: 16px 20px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: inherit;
+    color: var(--text);
+  }
+  .test-btn:hover {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    transform: translateY(-1px);
+  }
+  .test-btn h3 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    color: var(--primary);
+    font-weight: 600;
+  }
+  .test-btn p { margin: 0; font-size: 13px; color: var(--muted); }
+  .free-practice {
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+  }
+  .free-practice h3 { margin: 0 0 12px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .free-practice .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+  .free-practice label { font-size: 13px; color: var(--muted); }
+  .free-practice select, .free-practice input[type="number"] {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 9px;
+    font-size: 13px;
+    font-family: inherit;
   }
 
   .progress-bar {
@@ -70,14 +140,12 @@
     height: 100%;
     transition: width 0.3s ease;
   }
-
   .progress-text {
     text-align: center;
     color: var(--muted);
     font-size: 13px;
     margin-bottom: 16px;
   }
-
   .card {
     background: var(--card-bg);
     border-radius: 12px;
@@ -85,7 +153,6 @@
     box-shadow: var(--shadow);
     margin-bottom: 16px;
   }
-
   .card-meta {
     display: flex;
     justify-content: space-between;
@@ -103,18 +170,12 @@
     border-radius: 999px;
     font-weight: 600;
   }
-
   .question-text {
     font-size: 17px;
     margin-bottom: 22px;
     line-height: 1.7;
   }
-
-  .choices {
-    display: grid;
-    gap: 10px;
-  }
-
+  .choices { display: grid; gap: 10px; }
   .choice {
     background: #fafbfc;
     border: 2px solid var(--border);
@@ -148,7 +209,6 @@
     border-color: var(--incorrect);
   }
   .choice.incorrect .letter { color: var(--incorrect); }
-
   .feedback {
     margin-top: 18px;
     padding: 14px 16px;
@@ -157,52 +217,44 @@
     border-left: 4px solid var(--primary);
     font-size: 15px;
   }
-  .feedback.correct {
-    background: var(--correct-light);
-    border-left-color: var(--correct);
-  }
-  .feedback.incorrect {
-    background: var(--incorrect-light);
-    border-left-color: var(--incorrect);
-  }
-  .feedback .label {
-    font-weight: 700;
-    margin-bottom: 6px;
-    display: block;
-  }
+  .feedback.correct { background: var(--correct-light); border-left-color: var(--correct); }
+  .feedback.incorrect { background: var(--incorrect-light); border-left-color: var(--incorrect); }
+  .feedback.skipped { background: #f5f5f5; border-left-color: var(--muted); }
+  .feedback .label { font-weight: 700; margin-bottom: 6px; display: block; }
 
   .controls {
     display: flex;
     justify-content: space-between;
-    gap: 12px;
+    gap: 10px;
     margin-top: 20px;
+    flex-wrap: wrap;
   }
-
+  .controls-row { display: flex; gap: 8px; }
   button {
     border: none;
     border-radius: 8px;
-    padding: 11px 22px;
-    font-size: 15px;
+    padding: 10px 18px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.15s ease;
     font-family: inherit;
   }
-  button.primary {
-    background: var(--primary);
-    color: white;
-  }
-  button.primary:hover { background: #0d47a1; }
+  button.primary { background: var(--primary); color: white; }
+  button.primary:hover:not(:disabled) { background: var(--primary-dark); }
   button.secondary {
     background: white;
     color: var(--primary);
     border: 2px solid var(--primary);
   }
-  button.secondary:hover { background: var(--primary-light); }
-  button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+  button.secondary:hover:not(:disabled) { background: var(--primary-light); }
+  button.tertiary {
+    background: white;
+    color: var(--muted);
+    border: 2px solid var(--border);
   }
+  button.tertiary:hover:not(:disabled) { border-color: var(--muted); color: var(--text); }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
 
   .summary {
     background: var(--card-bg);
@@ -219,7 +271,6 @@
     margin: 16px 0;
   }
   .score-detail { color: var(--muted); font-size: 14px; }
-
   .topic-breakdown {
     text-align: left;
     margin-top: 24px;
@@ -227,7 +278,7 @@
     border-top: 1px solid var(--border);
   }
   .topic-breakdown h3 {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--muted);
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -240,25 +291,6 @@
     font-size: 14px;
     border-bottom: 1px dashed var(--border);
   }
-
-  .toolbar {
-    text-align: center;
-    margin-bottom: 16px;
-  }
-  .toolbar label {
-    font-size: 13px;
-    color: var(--muted);
-    margin-right: 8px;
-  }
-  .toolbar select, .toolbar input[type="number"] {
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 5px 8px;
-    font-size: 13px;
-    font-family: inherit;
-    margin-right: 12px;
-  }
-
   footer {
     text-align: center;
     color: var(--muted);
@@ -271,23 +303,31 @@
 
 <body>
 <header>
-  <h1 id="page-title">Honors Algebra II — Final Exam Practice</h1>
-  <div class="meta" id="page-meta"></div>
+  <a class="home-link" href="../" title="Back to all decks">← Home</a>
+  <div class="title-block">
+    <h1 id="page-title">Practice Cards</h1>
+    <div class="meta" id="page-meta"></div>
+  </div>
 </header>
 
 <main>
-  <div class="toolbar" id="toolbar">
-    <label for="num-questions">Number of cards:</label>
-    <input type="number" id="num-questions" min="5" max="32" value="15">
-    <label for="filter-chapter">Chapter:</label>
-    <select id="filter-chapter">
-      <option value="all">All (Ch 5–8)</option>
-      <option value="5">Ch 5 — Polynomials</option>
-      <option value="6">Ch 6 — Radicals/Rational Exp</option>
-      <option value="7">Ch 7 — Exp/Log</option>
-      <option value="8">Ch 8 — Rational Functions</option>
-    </select>
-    <button class="primary" id="start-btn">Start</button>
+  <div class="selector" id="selector">
+    <h2>Full-Curriculum Tests</h2>
+    <div class="test-grid" id="test-grid"></div>
+
+    <h2>Free Practice</h2>
+    <div class="free-practice">
+      <h3>Customize your session</h3>
+      <div class="row">
+        <label for="num-questions">Number of cards:</label>
+        <input type="number" id="num-questions" min="5" max="100" value="15">
+        <label for="filter-section" id="filter-label">Section:</label>
+        <select id="filter-section">
+          <option value="all">All</option>
+        </select>
+        <button class="primary" id="start-btn">Start</button>
+      </div>
+    </div>
   </div>
 
   <div id="quiz-area" style="display:none;">
@@ -300,26 +340,68 @@
 </main>
 
 <footer>
-  iWork Math Academy — 원장 이상열 · Generated 2026-05-01
+  iWork Math &amp; Science Academy — 원장 이상열
 </footer>
 
 <script>
 'use strict';
 
 let allQuestions = [];
+let questionsById = {};
 let metaInfo = {};
-let currentQuestions = [];
-let currentIndex = 0;
-let answers = [];   // { qid, picked, correct }
+let categoryConfig = { label: 'Section', short: 'Sec', categories: [] };
+let presetTests = [];
+let currentSession = null;
 
 async function loadQuestions() {
   const res = await fetch('questions.json');
   const data = await res.json();
   allQuestions = data.questions;
+  questionsById = Object.fromEntries(allQuestions.map(q => [q.id, q]));
   metaInfo = data;
+  presetTests = Array.isArray(data.tests) ? data.tests : [];
+
   document.getElementById('page-title').textContent = data.title;
-  document.getElementById('page-meta').textContent =
-    `${data.subject} · Exam: ${data.exam_date} · Instructor: ${data.instructor}`;
+  document.title = data.title;
+  const metaParts = [data.subject, data.exam_date ? 'Exam: ' + data.exam_date : null, 'Instructor: ' + data.instructor];
+  document.getElementById('page-meta').textContent = metaParts.filter(Boolean).join(' · ');
+
+  if (data.ui) {
+    if (data.ui.category_label) categoryConfig.label = data.ui.category_label;
+    if (data.ui.category_short) categoryConfig.short = data.ui.category_short;
+    if (Array.isArray(data.ui.categories)) categoryConfig.categories = data.ui.categories;
+    if (data.ui.theme_color) document.documentElement.style.setProperty('--primary', data.ui.theme_color);
+    if (data.ui.theme_light) document.documentElement.style.setProperty('--primary-light', data.ui.theme_light);
+  }
+
+  renderTestGrid();
+
+  document.getElementById('filter-label').textContent = categoryConfig.label + ':';
+  const sel = document.getElementById('filter-section');
+  for (const cat of categoryConfig.categories) {
+    const opt = document.createElement('option');
+    opt.value = cat.id;
+    opt.textContent = cat.label;
+    sel.appendChild(opt);
+  }
+}
+
+function renderTestGrid() {
+  const grid = document.getElementById('test-grid');
+  grid.innerHTML = '';
+  if (presetTests.length === 0) {
+    grid.innerHTML = '<p style="color:var(--muted); font-size:13px; padding:8px;">(No preset tests configured.)</p>';
+    return;
+  }
+  for (const t of presetTests) {
+    const btn = document.createElement('button');
+    btn.className = 'test-btn';
+    btn.innerHTML =
+      '<h3>' + t.name + '</h3>' +
+      '<p>' + (t.description || (t.question_ids.length + ' questions')) + '</p>';
+    btn.addEventListener('click', () => startPresetTest(t));
+    grid.appendChild(btn);
+  }
 }
 
 function shuffle(arr) {
@@ -331,58 +413,83 @@ function shuffle(arr) {
   return a;
 }
 
-function startQuiz() {
-  const filter = document.getElementById('filter-chapter').value;
-  const num = parseInt(document.getElementById('num-questions').value, 10);
+function getQuestionCategory(q) {
+  return q.section || q.chapter || '';
+}
 
-  let pool = allQuestions;
-  if (filter !== 'all') {
-    pool = allQuestions.filter(q => q.chapter.startsWith(filter));
-  }
-
-  if (pool.length === 0) {
-    alert('No questions match the selected chapter.');
+function startPresetTest(test) {
+  const questions = test.question_ids.map(id => questionsById[id]).filter(Boolean);
+  if (questions.length === 0) {
+    alert('This test has no valid questions.');
     return;
   }
+  currentSession = {
+    questions,
+    answers: new Array(questions.length).fill(null),
+    index: 0,
+    label: test.name,
+  };
+  showQuiz();
+}
 
-  currentQuestions = shuffle(pool).slice(0, Math.min(num, pool.length));
-  currentIndex = 0;
-  answers = [];
+function startFreePractice() {
+  const filter = document.getElementById('filter-section').value;
+  const num = parseInt(document.getElementById('num-questions').value, 10);
+  let pool = allQuestions;
+  if (filter !== 'all') {
+    pool = allQuestions.filter(q => getQuestionCategory(q) === filter);
+  }
+  if (pool.length === 0) {
+    alert('No questions match the selected filter.');
+    return;
+  }
+  const questions = shuffle(pool).slice(0, Math.min(num, pool.length));
+  currentSession = {
+    questions,
+    answers: new Array(questions.length).fill(null),
+    index: 0,
+    label: 'Free Practice',
+  };
+  showQuiz();
+}
 
-  document.getElementById('toolbar').style.display = 'none';
+function showQuiz() {
+  document.getElementById('selector').style.display = 'none';
   document.getElementById('summary-area').style.display = 'none';
   document.getElementById('quiz-area').style.display = 'block';
-
   renderCard();
 }
 
 function renderCard() {
-  const q = currentQuestions[currentIndex];
-  const total = currentQuestions.length;
+  const s = currentSession;
+  const q = s.questions[s.index];
+  const cat = getQuestionCategory(q);
+  const total = s.questions.length;
+  const existing = s.answers[s.index];
 
   document.getElementById('progress-text').textContent =
-    `Card ${currentIndex + 1} of ${total}`;
+    s.label + ' · Card ' + (s.index + 1) + ' of ' + total;
   document.getElementById('progress-fill').style.width =
-    `${((currentIndex) / total) * 100}%`;
+    (((s.index + 1) / total) * 100) + '%';
 
   const container = document.getElementById('card-container');
-  container.innerHTML = `
-    <div class="card">
-      <div class="card-meta">
-        <span class="chip">Ch ${q.chapter} · ${q.topic}</span>
-        <span>${q.id}</span>
-      </div>
-      <div class="question-text">${q.question}</div>
-      <div class="choices" id="choices-list"></div>
-      <div id="feedback-area"></div>
-      <div class="controls">
-        <button class="secondary" id="skip-btn">Skip</button>
-        <button class="primary" id="next-btn" style="display:none;">
-          ${currentIndex + 1 === total ? 'Finish' : 'Next →'}
-        </button>
-      </div>
-    </div>
-  `;
+  container.innerHTML =
+    '<div class="card">' +
+      '<div class="card-meta">' +
+        '<span class="chip">' + categoryConfig.short + ' ' + cat + ' · ' + q.topic + '</span>' +
+        '<span>' + q.id + '</span>' +
+      '</div>' +
+      '<div class="question-text">' + q.question + '</div>' +
+      '<div class="choices" id="choices-list"></div>' +
+      '<div id="feedback-area"></div>' +
+      '<div class="controls">' +
+        '<button class="tertiary" id="prev-btn"' + (s.index === 0 ? ' disabled' : '') + '>← Prev</button>' +
+        '<div class="controls-row">' +
+          '<button class="secondary" id="skip-btn">Skip</button>' +
+          '<button class="primary" id="next-btn">' + (s.index + 1 === total ? 'Finish' : 'Next →') + '</button>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
 
   const choicesList = document.getElementById('choices-list');
   for (const letter of ['A', 'B', 'C', 'D']) {
@@ -390,13 +497,34 @@ function renderCard() {
     const div = document.createElement('div');
     div.className = 'choice';
     div.dataset.letter = letter;
-    div.innerHTML = `<span class="letter">${letter}.</span><span class="text">${q.choices[letter]}</span>`;
-    div.addEventListener('click', () => pickAnswer(letter));
+    div.innerHTML = '<span class="letter">' + letter + '.</span><span class="text">' + q.choices[letter] + '</span>';
+    if (existing) {
+      div.classList.add('disabled');
+      if (letter === q.answer) div.classList.add('correct');
+      else if (existing.picked && letter === existing.picked) div.classList.add('incorrect');
+    } else {
+      div.addEventListener('click', () => pickAnswer(letter));
+    }
     choicesList.appendChild(div);
   }
 
+  if (existing) {
+    const fb = document.getElementById('feedback-area');
+    let cls = 'skipped', label = '○ Skipped';
+    if (existing.picked) {
+      cls = existing.correct ? 'correct' : 'incorrect';
+      label = existing.correct ? '✓ Correct' : '✗ Incorrect';
+    }
+    fb.innerHTML =
+      '<div class="feedback ' + cls + '">' +
+        '<span class="label">' + label + ' — Answer: ' + q.answer + '</span>' +
+        '<div>' + q.explanation + '</div>' +
+      '</div>';
+  }
+
+  document.getElementById('prev-btn').addEventListener('click', () => goPrev());
   document.getElementById('skip-btn').addEventListener('click', () => skipCard());
-  document.getElementById('next-btn').addEventListener('click', () => nextCard());
+  document.getElementById('next-btn').addEventListener('click', () => goNext());
 
   if (window.MathJax && MathJax.typesetPromise) {
     MathJax.typesetPromise([container]).catch(err => console.warn(err));
@@ -404,14 +532,14 @@ function renderCard() {
 }
 
 function pickAnswer(letter) {
-  const q = currentQuestions[currentIndex];
+  const s = currentSession;
+  const q = s.questions[s.index];
   const correct = (letter === q.answer);
-  answers.push({ qid: q.id, picked: letter, correct });
+  s.answers[s.index] = { picked: letter, correct };
 
-  const choices = document.querySelectorAll('.choice');
-  choices.forEach(c => {
+  document.querySelectorAll('.choice').forEach(c => {
     c.classList.add('disabled');
-    c.replaceWith(c.cloneNode(true)); // remove listeners
+    c.replaceWith(c.cloneNode(true));
   });
   document.querySelectorAll('.choice').forEach(c => {
     const cl = c.dataset.letter;
@@ -420,15 +548,11 @@ function pickAnswer(letter) {
   });
 
   const fb = document.getElementById('feedback-area');
-  fb.innerHTML = `
-    <div class="feedback ${correct ? 'correct' : 'incorrect'}">
-      <span class="label">${correct ? '✓ Correct' : '✗ Incorrect'} — Answer: ${q.answer}</span>
-      <div>${q.explanation}</div>
-    </div>
-  `;
-
-  document.getElementById('skip-btn').style.display = 'none';
-  document.getElementById('next-btn').style.display = 'inline-block';
+  fb.innerHTML =
+    '<div class="feedback ' + (correct ? 'correct' : 'incorrect') + '">' +
+      '<span class="label">' + (correct ? '✓ Correct' : '✗ Incorrect') + ' — Answer: ' + q.answer + '</span>' +
+      '<div>' + q.explanation + '</div>' +
+    '</div>';
 
   if (window.MathJax && MathJax.typesetPromise) {
     MathJax.typesetPromise([fb]).catch(err => console.warn(err));
@@ -436,61 +560,74 @@ function pickAnswer(letter) {
 }
 
 function skipCard() {
-  const q = currentQuestions[currentIndex];
-  answers.push({ qid: q.id, picked: null, correct: false });
-  nextCard();
+  const s = currentSession;
+  if (s.answers[s.index] === null) {
+    s.answers[s.index] = { picked: null, correct: false };
+  }
+  goNext();
 }
 
-function nextCard() {
-  currentIndex++;
-  if (currentIndex >= currentQuestions.length) {
+function goNext() {
+  const s = currentSession;
+  if (s.index + 1 >= s.questions.length) {
     showSummary();
   } else {
+    s.index++;
+    renderCard();
+  }
+}
+
+function goPrev() {
+  const s = currentSession;
+  if (s.index > 0) {
+    s.index--;
     renderCard();
   }
 }
 
 function showSummary() {
+  const s = currentSession;
   document.getElementById('quiz-area').style.display = 'none';
-  const correctCount = answers.filter(a => a.correct).length;
-  const total = answers.length;
-  const pct = Math.round((correctCount / total) * 100);
 
-  // Per-chapter breakdown
-  const chapterStats = {};
-  answers.forEach(a => {
-    const q = currentQuestions.find(x => x.id === a.qid);
-    const ch = q.chapter.split('-')[0];
-    if (!chapterStats[ch]) chapterStats[ch] = { right: 0, total: 0 };
-    chapterStats[ch].total++;
-    if (a.correct) chapterStats[ch].right++;
+  const total = s.questions.length;
+  const correctCount = s.answers.filter(a => a && a.correct).length;
+  const skipped = s.answers.filter(a => a === null || a.picked === null).length;
+  const wrong = total - correctCount - skipped;
+  const pct = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+
+  const stats = {};
+  s.answers.forEach((a, i) => {
+    const q = s.questions[i];
+    const cat = getQuestionCategory(q);
+    if (!stats[cat]) stats[cat] = { right: 0, total: 0 };
+    stats[cat].total++;
+    if (a && a.correct) stats[cat].right++;
   });
 
-  let breakdownHTML = '<div class="topic-breakdown"><h3>By Chapter</h3>';
-  Object.keys(chapterStats).sort().forEach(ch => {
-    const s = chapterStats[ch];
-    breakdownHTML += `<div class="topic-row"><span>Chapter ${ch}</span><span>${s.right} / ${s.total}</span></div>`;
+  let breakdownHTML = '<div class="topic-breakdown"><h3>By ' + categoryConfig.label + '</h3>';
+  Object.keys(stats).sort().forEach(cat => {
+    const x = stats[cat];
+    breakdownHTML += '<div class="topic-row"><span>' + categoryConfig.short + ' ' + cat + '</span><span>' + x.right + ' / ' + x.total + '</span></div>';
   });
   breakdownHTML += '</div>';
 
   const summary = document.getElementById('summary-area');
-  summary.innerHTML = `
-    <div class="summary">
-      <h2>Session Complete</h2>
-      <div class="score">${correctCount} / ${total}</div>
-      <div class="score-detail">${pct}% correct · ${total - correctCount} missed</div>
-      ${breakdownHTML}
-      <div class="controls" style="justify-content:center; margin-top:24px;">
-        <button class="primary" onclick="location.reload()">Try Another Set</button>
-      </div>
-    </div>
-  `;
+  summary.innerHTML =
+    '<div class="summary">' +
+      '<h2>Session Complete — ' + s.label + '</h2>' +
+      '<div class="score">' + correctCount + ' / ' + total + '</div>' +
+      '<div class="score-detail">' + pct + '% correct · ' + wrong + ' missed · ' + skipped + ' skipped</div>' +
+      breakdownHTML +
+      '<div class="controls" style="justify-content:center; margin-top:24px;">' +
+        '<button class="primary" onclick="location.reload()">Choose Another Test</button>' +
+      '</div>' +
+    '</div>';
   summary.style.display = 'block';
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
   await loadQuestions();
-  document.getElementById('start-btn').addEventListener('click', startQuiz);
+  document.getElementById('start-btn').addEventListener('click', startFreePractice);
 });
 </script>
 </body>

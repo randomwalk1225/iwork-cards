@@ -7,12 +7,124 @@
     "category_label": "Section",
     "category_short": "Sec",
     "categories": [
-      {"id": "I",   "label": "I — Gene Expression & Central Dogma"},
-      {"id": "II",  "label": "II — Mutations"},
-      {"id": "III", "label": "III — Genetics & Inheritance Patterns"},
-      {"id": "IV",  "label": "IV — Variation & Adaptations"}
-    ]
+      {
+        "id": "I",
+        "label": "I — Gene Expression & Central Dogma"
+      },
+      {
+        "id": "II",
+        "label": "II — Mutations"
+      },
+      {
+        "id": "III",
+        "label": "III — Genetics & Inheritance Patterns"
+      },
+      {
+        "id": "IV",
+        "label": "IV — Variation & Adaptations"
+      }
+    ],
+    "theme_color": "#2e7d32",
+    "theme_light": "#e8f5e9"
   },
+  "tests": [
+    {
+      "id": "test1",
+      "name": "Practice Test 1",
+      "description": "25 questions across all 4 sections",
+      "question_ids": [
+        "B01",
+        "B03",
+        "B05",
+        "B07",
+        "B33",
+        "B36",
+        "B40",
+        "B10",
+        "B12",
+        "B44",
+        "B46",
+        "B49",
+        "B52",
+        "B16",
+        "B18",
+        "B20",
+        "B22",
+        "B56",
+        "B58",
+        "B61",
+        "B25",
+        "B27",
+        "B30",
+        "B69",
+        "B72"
+      ]
+    },
+    {
+      "id": "test2",
+      "name": "Practice Test 2",
+      "description": "25 questions across all 4 sections",
+      "question_ids": [
+        "B02",
+        "B04",
+        "B06",
+        "B08",
+        "B34",
+        "B37",
+        "B41",
+        "B11",
+        "B13",
+        "B45",
+        "B47",
+        "B50",
+        "B53",
+        "B17",
+        "B19",
+        "B21",
+        "B23",
+        "B57",
+        "B59",
+        "B62",
+        "B26",
+        "B28",
+        "B31",
+        "B70",
+        "B73"
+      ]
+    },
+    {
+      "id": "test3",
+      "name": "Practice Test 3",
+      "description": "25 questions across all 4 sections",
+      "question_ids": [
+        "B09",
+        "B35",
+        "B38",
+        "B39",
+        "B42",
+        "B43",
+        "B14",
+        "B15",
+        "B48",
+        "B51",
+        "B54",
+        "B55",
+        "B24",
+        "B60",
+        "B63",
+        "B64",
+        "B65",
+        "B66",
+        "B67",
+        "B68",
+        "B29",
+        "B32",
+        "B71",
+        "B74",
+        "B75"
+      ]
+    }
+  ],
   "questions": [
     {
       "id": "B01",
